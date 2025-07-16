@@ -63,7 +63,7 @@ const TestimonialSection = () => {
       <div className="relative">
         <div
           ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory pb-10"
+          className="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar snap-x snap-mandatory pb-10"
         >
           {testimonials.map((t, i) => (
             <div

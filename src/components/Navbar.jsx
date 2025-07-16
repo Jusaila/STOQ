@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
+import "../index.css";
+
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
