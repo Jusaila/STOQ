@@ -5,6 +5,8 @@ import SeeDoGrowSection from "./components/SeeDoGrowSection";
 import BubbleAutoScroll from "./components/BubbleAnimation";
 import HeroSection from "./components/HeroSection";
 import TestimonialSection from "./components/TestimonialSection";
+import PricingPlans from "./components/PricingPlans";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <HeroSection />
       <SeeDoGrowSection />
       <TestimonialSection />
+      <PricingPlans />
+      <Footer />
     </div>
   );
 };

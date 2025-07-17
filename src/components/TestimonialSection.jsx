@@ -30,7 +30,7 @@ const testimonials = [
     name: "Johnny B",
     role: "PM, Sisyphus",
     agency: "Machine Learning Agency",
-    rating: 3,
+    rating: 5,
   },
   {
     image: "/images/testimonial1.jpg",
@@ -55,7 +55,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="py-16 md:pl-20 bg-white">
-      <h2 className="text-3xl font-bold text-[#4B6100] mb-8">
+      <h2 className="text-3xl font-bold text-[#8CB031] mb-8">
         Don’t just take our word for it
       </h2>
 
@@ -68,19 +68,19 @@ const TestimonialSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="min-w-[300px] md:min-w-[320px] h-[480px] snap-start bg-white rounded-xl overflow-hidden shadow-md relative"
+              className="min-w-[300px] md:min-w-[360px] h-[480px] snap-start bg-transparent rounded-xl overflow-hidden shadow-md relative"
             >
               <img
                 src={t.image}
                 alt={t.name}
-                className="w-full h-80 object-cover"
+                className="absolute inset-0 w-full h-full object-cover z-0"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-white/70 backdrop-blur-md p-4 rounded-lg">
-                {t.quote ? (
-                  <p className="text-sm text-black font-semibold mb-2">"{t.quote}"</p>
-                ) : (
-                  <>
-                    <div className="flex text-yellow-500 mb-1">
+              <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md p-4 rounded-lg">
+                {t.quote && (
+                  <p className="text-sm text-white font-semibold mb-2">"{t.quote}"</p>
+                )}
+                  
+                    <div className="flex text-white mb-1">
                       {Array(t.rating)
                         .fill()
                         .map((_, i) => (
@@ -88,28 +88,26 @@ const TestimonialSection = () => {
                         ))}
                     </div>
                     <p className="font-bold text-black">{t.name}</p>
-                    <p className="text-gray-600 text-sm">{t.role}</p>
-                    <p className="text-gray-500 text-xs">{t.agency}</p>
-                  </>
-                )}
+                    <p className="text-white text-sm">{t.role}</p>
+                    <p className="text-white text-xs">{t.agency}</p>       
               </div>
             </div>
           ))}
         </div>
 
         {/* Arrow Controls - Below the first card */}
-        <div className="flex gap-4 mt-6 ml-2">
+        <div className="flex gap-6 mt-6 ml-2">
           <button
             onClick={() => scroll("left")}
             className="bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:shadow-lg"
           >
-            <FaArrowLeft />
+            <FaArrowLeft className="text-gray-500"/>
           </button>
           <button
             onClick={() => scroll("right")}
             className="bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:shadow-lg"
           >
-            <FaArrowRight />
+            <FaArrowRight className="text-gray-500" />
           </button>
         </div>
       </div>

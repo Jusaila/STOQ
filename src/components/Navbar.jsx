@@ -15,11 +15,9 @@ const Navbar = () => {
       <div className="w-full max-w-screen-xl flex items-center justify-between bg-white/30 backdrop-blur-md border border-gray-300 shadow-md rounded-xl px-6 py-3">
 
         {/* Left Logo */}
-        <div className="flex items-center text-2xl font-bold text-[#82B622] font-rubik">
-          <span className="mr-1">ST</span>
-          <span className="text-black bg-white px-1 rounded-full">O</span>
-          <span className="ml-1">Q</span>
-        </div>
+        {/* Logo */}
+        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-6 mb-4 md:mb-0" />
+
 
         {/* Middle Nav Items */}
         <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-700 relative">
