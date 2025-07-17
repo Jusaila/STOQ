@@ -9,20 +9,21 @@ const categories = [
   "FREELANCERS",
   "WELLNESS",
   "CONSTRUCTION",
-  // "WORKSHOPS",
-  // "KIDS",
+  "WORKSHOPS",
+  "KIDS",
 ];
 
 
 const BubbleAnimation = () => {
   const [yPosition, setYPosition] = useState(0);
-  const spacing = 170;
-  const loopHeight = 1200;
+  const spacing = 270;
+const loopHeight = spacing * categories.length;
+
 
   useEffect(() => {
     let frameId;
     const animate = () => {
-      setYPosition((prev) => (prev - 0.5 + loopHeight) % loopHeight);
+      setYPosition((prev) => (prev - 2 + loopHeight) % loopHeight);
       frameId = requestAnimationFrame(animate);
     };
     frameId = requestAnimationFrame(animate);
@@ -44,7 +45,7 @@ const BubbleAnimation = () => {
     style={{
       position: "absolute",
       top: "50%",
-      left: "0%", // adjust this to move bubbles left/right
+      left: "44.5%", // adjust this to move bubbles left/right
       transform: "translate(-50%, -50%)",
     }}
   >
@@ -52,17 +53,22 @@ const BubbleAnimation = () => {
   const y = getY(i * spacing);
   return (
     <div
-      key={i}
-      className="absolute w-[140px] h-[140px] rounded-full text-[12px] text-black font-semibold flex items-center justify-center shadow-md"
-      style={{
-        transform: `translateY(${y}px)`,
-        background: "rgba(255, 255, 255, 0.3)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(255, 255, 255, 0.6)",
-        opacity: Math.abs(y) > loopHeight / 2 - 140 ? 0 : 1,
-      }}
-    >
+    key={i}
+    className="absolute w-[220px] h-[220px] rounded-full text-[23px] font-bold flex items-center justify-center"
+    style={{
+      transform: `translateY(${y}px)`,
+      color: "#1a1a1a", // black text
+      background: "rgba(255, 255, 255, 0.1) 70%)",
+      border: "1px solid rgba(255, 255, 255, 0.6)",
+      boxShadow: `
+        0 10px 20px rgba(0, 0, 0, 0.15), /* Outer drop shadow */
+        inset 0 0 25px rgba(255, 255, 255, 0.4) /* Inner glow */
+      `,
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      opacity: Math.abs(y) > loopHeight / 2 - 140 ? 0 : 1,
+    }}
+  >
       {text}
     </div>
   );
