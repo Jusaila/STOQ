@@ -1,9 +1,45 @@
 // src/components/HeroSection.jsx
-import React from "react";
+
 import BubbleAnimation from "./BubbleAnimation";
 import Navbar from "./Navbar";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const HeroSection = () => {
+  const tryRef = useRef(null);
+
+  useEffect(() => {
+    // Start idle pulsing loop
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+    tl.to(tryRef.current, {
+      scale: 2,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+
+    // Hover effects
+    const el = tryRef.current;
+    const onEnter = () => {
+      tl.pause();
+      gsap.to(el, { scale: 2.2, duration: 0.8, ease: "power1.out" });
+    };
+    const onLeave = () => {
+      gsap.to(el, {
+        scale: 1.8,
+        duration: 1.5,
+        ease: "power1.inOut",
+        onComplete: () => tl.resume(),
+      });
+    };
+
+    el.addEventListener("mouseenter", onEnter);
+    el.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      el.removeEventListener("mouseenter", onEnter);
+      el.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
   return (
     <div className="relative h-screen overflow-hidden text-center">
       {/* Background Video */}
@@ -26,32 +62,30 @@ const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] pt-20">
-        <h1 className="flex items-center text-[10rem] font-extrabold tracking-wide font-rubik">
-          S T
+        {/* STOQ Image */}
+        <div className="relative">
+          <img
+            src="/images/STOQ Logo Final.png"
+            alt="STOQ Logo Text"
+            className="w-[800px] h-[350px] object-contain"
+          />
 
-          <div className="relative w-[140px] h-[140px] mx-4 flex justify-center items-center">
-        {/* The 'O' letter (should appear below bubbles visually) */}
-        <span className="relative z-10 text-[10rem] text-[#A9CF45] font-extrabold inline-flex items-center justify-center">
-        O
-        <span
-            className="absolute w-[60px] h-[60px] rounded-full bg-[#A9CF45] transition-colors duration-500"
-            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-        />
-        </span>
+          {/* TRY Bubble Positioned Inside Q */}
+      <div
+        ref={tryRef}
+        className="try-circle absolute w-[60px] h-[60px] rounded-full bg-black text-white text-base font-bold flex items-center justify-center shadow-inner"
+        style={{
+          top: "50%",   // Tune this based on your image's Q hole
+          left: "86.5%",  // Tune this based on where Q appears in image
+          transform: "translate(-50%, -50%)",
+          cursor: "pointer",
+        }}
+      >
+        TRY
+      </div>
 
-
-        {/* Bubble Animation */}
-        <BubbleAnimation />
-        </div>
-
-          {/* Q with TRY */}
-          <div className="relative w-[140px] h-[140px] ml-4 text-[10rem] font-extrabold text-[#A9CF45] flex items-center justify-center">
-            Q
-            <div className="absolute w-[60px] h-[60px] rounded-full bg-black text-white text-base font-bold flex items-center justify-center shadow-inner border-4 border-white">
-              TRY
-            </div>
+            <BubbleAnimation />
           </div>
-        </h1>
 
         <div className="w-full max-w-screen-xl px-4 mx-auto">
         {/* Subtitle aligned to right where Q starts */}

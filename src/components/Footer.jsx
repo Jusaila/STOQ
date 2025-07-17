@@ -3,6 +3,10 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-white text-sm text-[#7A7A7A] px-6 pt-16">
+
+       {/* Divider Line */}
+       <hr className="border-t-2 border-gray-100 mx-20 mb-16" />
+
       <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-left">
 
         {/* Use Cases Column 1 */}
@@ -99,8 +103,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-200 mt-10 mb-6"></div>
+      {/* Divider Line */}
+      <hr className="border-t-2 border-gray-100 mx-20 mt-16 mb-8" />
+
 
       {/* Bottom Row */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-0 pb-10 text-sm">
