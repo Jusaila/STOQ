@@ -54,21 +54,31 @@ const loopHeight = spacing * categories.length;
   return (
     <div
     key={i}
-    className="absolute w-[220px] h-[220px] rounded-full text-[23px] font-bold flex items-center justify-center"
+    className="absolute w-[220px] h-[220px] rounded-full text-[23px] font-bold text-black overflow-hidden flex items-center justify-center"
     style={{
       transform: `translateY(${y}px)`,
-      color: "#1a1a1a", // black text
-      background: "rgba(255, 255, 255, 0.1) 70%)",
-      border: "1px solid rgba(255, 255, 255, 0.6)",
-      boxShadow: `
-        0 10px 20px rgba(0, 0, 0, 0.15), /* Outer drop shadow */
-        inset 0 0 25px rgba(255, 255, 255, 0.4) /* Inner glow */
+  
+      // Soft white frosted glass effect
+      background: `
+        linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)
       `,
-      backdropFilter: "blur(12px)",
-      WebkitBackdropFilter: "blur(12px)",
+      border: "1px solid rgba(255, 255, 255, 0.4)",
+  
+      // Light inner shadows and glow
+      boxShadow: `
+        inset 0 0 10px rgba(255, 255, 255, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.05)
+      `,
+  
+      // Background blur for glass effect
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
+  
+      // Only show within bounds
       opacity: Math.abs(y) > loopHeight / 2 - 140 ? 0 : 1,
     }}
-  >
+  > 
       {text}
     </div>
   );
