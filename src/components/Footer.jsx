@@ -4,20 +4,19 @@ const Footer = () => {
   return (
     <footer className="bg-white text-sm text-[#7A7A7A] px-6 pt-16">
 
-       {/* Divider Line */}
-       <hr className="border-t-2 border-gray-100 mx-20 mb-16" />
+      {/* Divider Line */}
+      <hr className="border-t-2 border-gray-100 mx-20 mb-16" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-left">
-
         {/* Use Cases Column 1 */}
         <div>
           <h4 className="font-bold text-black mb-3">Use Cases</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li>Construction</li>
-            <li>Workshops</li>
-            <li>Farmers</li>
-            <li>Restaurants</li>
-            <li>Home & Care</li>
+            <li><a href="#">Construction</a></li>
+            <li><a href="#">Workshops</a></li>
+            <li><a href="#">Farmers</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Home & Care</a></li>
           </ul>
         </div>
 
@@ -25,11 +24,11 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Use Cases</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li>Hobbyists</li>
-            <li>Kids</li>
-            <li>Freelancers</li>
-            <li>Wellness</li>
-            <li>Services</li>
+            <li><a href="#">Hobbyists</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Freelancers</a></li>
+            <li><a href="#">Wellness</a></li>
+            <li><a href="#">Services</a></li>
           </ul>
         </div>
 
@@ -37,9 +36,9 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Company</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li>About us</li>
-            <li>Pricing</li>
-            <li>Contact</li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
@@ -47,10 +46,10 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Resources</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li>STOQ FAQs</li>
-            <li>Help center</li>
-            <li>Tutorials</li>
-            <li>Support</li>
+            <li><a href="#">STOQ FAQs</a></li>
+            <li><a href="#">Help center</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Support</a></li>
           </ul>
         </div>
 
@@ -58,61 +57,50 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Legal</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li>Terms</li>
-            <li>Privacy</li>
-            <li>Cookies</li>
-            <li>Licenses</li>
-            <li>Settings</li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Settings</a></li>
           </ul>
         </div>
 
         {/* Get the app */}
         <div className="left-[155px] flex flex-col gap-4 z-20">
-            <h3 className="text-black font-bold">Get the app</h3>
-            {/* App Store */}
-            <a
-                href="#"
-                className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
-            >
-                <img
-                src="/images/Apple logo.png" // Replace with your actual Apple icon path
-                alt="Apple"
-                className="w-6 h-6 mr-3"
-                />
-                <div className="text-left text-sm leading-tight">
-                <p className="text-white text-xs">Download on the</p>
-                <p className="font-semibold text-white">App Store</p>
-                </div>
-            </a>
+          <h3 className="text-black font-bold">Get the app</h3>
 
-            {/* Google Play */}
-            <a
-                href="#"
-                className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
-            >
-                <img
-                src="/icons/Google_Play_Arrow_logo.svg" // Replace with your actual Google Play icon path
-                alt="Google Play"
-                className="w-6 h-6 mr-3"
-                />
-                <div className="text-left text-sm leading-tight">
-                <p className="text-gwhite text-xs text-white">GET IT ON</p>
-                <p className="font-semibold text-white">Google Play</p>
-                </div>
-            </a>
+          {/* App Store */}
+          <a
+            href="#"
+            className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
+          >
+            <img src="/images/Apple logo.png" alt="Apple" className="w-6 h-6 mr-3" />
+            <div className="text-left text-sm leading-tight">
+              <p className="text-white text-xs">Download on the</p>
+              <p className="font-semibold text-white">App Store</p>
+            </div>
+          </a>
+
+          {/* Google Play */}
+          <a
+            href="#"
+            className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
+          >
+            <img src="/icons/Google_Play_Arrow_logo.svg" alt="Google Play" className="w-6 h-6 mr-3" />
+            <div className="text-left text-sm leading-tight">
+              <p className="text-xs text-white">GET IT ON</p>
+              <p className="font-semibold text-white">Google Play</p>
+            </div>
+          </a>
         </div>
       </div>
 
       {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mt-16 mb-8" />
 
-
       {/* Bottom Row */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-0 pb-10 text-sm">
-        {/* Logo */}
         <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-6 mb-4 md:mb-0" />
-
-        {/* Copyright */}
         <p className="text-[#6B7280]">&copy; 2025 STOQ. All rights reserved.</p>
       </div>
     </footer>
