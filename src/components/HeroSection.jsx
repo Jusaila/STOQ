@@ -1,12 +1,23 @@
 // src/components/HeroSection.jsx
-
+import React, { useEffect, useRef, useState } from "react";
 import BubbleAnimation from "./BubbleAnimation";
 import Navbar from "./Navbar";
-import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+
+
+
+const colorCycle = ["#A9CF45", "#6E8A28", "#303C14"]; // your 3 colors
 
 const HeroSection = () => {
   const tryRef = useRef(null);
+  const [colorIndex, setColorIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prevIndex) => (prevIndex + 1) % colorCycle.length);
+    }, 2500); // every 2 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     // Start idle pulsing loop
@@ -69,6 +80,18 @@ const HeroSection = () => {
             alt="STOQ Logo Text"
             className="w-[800px] h-[350px] object-contain"
           />
+
+           {/* BACKGROUND COLOR-CHANGING CIRCLE INSIDE Q */}
+        <div
+          className="absolute w-[64px] h-[64px] rounded-full transition-colors duration-700 z-0"
+          style={{
+            top: "50%",
+            left: "58.4%",
+            transform: "translate(-50%, -50%)",
+            backgroundColor: colorCycle[colorIndex],
+            opacity: 1, // optional transparency
+          }}
+        ></div>
 
           {/* TRY Bubble Positioned Inside Q */}
       <div
