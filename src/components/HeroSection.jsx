@@ -96,7 +96,7 @@ const HeroSection = () => {
             ref={tryRef}
             className="try-circle absolute w-[120px] h-[120px] rounded-full overflow-hidden flex items-center justify-center z-20"
             style={{
-              top: "52.5%",
+              top: "52.15%",
               left: "86.5%",
               transform: "translate(-50%, -50%)",
               cursor: "pointer",
