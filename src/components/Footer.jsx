@@ -12,11 +12,11 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Use Cases</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li><a href="#">Construction</a></li>
-            <li><a href="#">Workshops</a></li>
-            <li><a href="#">Farmers</a></li>
-            <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Home & Care</a></li>
+            <li><a href="#construction">Construction</a></li>
+            <li><a href="#Workshops">Workshops</a></li>
+            <li><a href="#Farmers">Farmers</a></li>
+            <li><a href="#Restaurant">Restaurants</a></li>
+            <li><a href="#Home & Care">Home & Care</a></li>
           </ul>
         </div>
 
@@ -24,11 +24,11 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-black mb-3">Use Cases</h4>
           <ul className="space-y-2 font-semibold text-[#7DA627]">
-            <li><a href="#">Hobbyists</a></li>
-            <li><a href="#">Kids</a></li>
-            <li><a href="#">Freelancers</a></li>
-            <li><a href="#">Wellness</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#Hobbyists">Hobbyists</a></li>
+            <li><a href="#Kids">Kids</a></li>
+            <li><a href="#Freelancers">Freelancers</a></li>
+            <li><a href="#Wellness">Wellness</a></li>
+            <li><a href="#ervices">Services</a></li>
           </ul>
         </div>
 
