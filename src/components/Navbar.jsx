@@ -55,14 +55,14 @@ const Navbar = () => {
   ];
   
   return (
-    <div className="w-full flex justify-center absolute top-6 z-20 px-4">
+    <div className="w-full flex justify-center absolute top-6 z-20 px-4 font-rubik">
       <div className="w-full max-w-screen-2xl flex items-center justify-between bg-white/30 backdrop-blur-md border border-gray-300 shadow-md rounded-xl px-6 py-3">
 
         {/* Left Logo */}
-        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-6" />
+        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-6"/>
 
         {/* Middle Nav Items - Desktop */}
-        <div className="hidden md:flex space-x-14 text-sm font-medium text-gray-700 relative">
+        <div className="hidden md:flex space-x-24 text-md font-normal text-[#414651] relative">
           {navItems.map((menu, idx) => (
             <div key={idx} className="relative">
               <button
@@ -116,12 +116,17 @@ const Navbar = () => {
 
         {/* Right Auth Buttons - Desktop */}
         <div className="hidden md:flex items-center space-x-4 text-sm font-medium">
-          <a href="#" className="bg-white rounded-full px-3 py-1.5 text-gray-700 hover:text-black border border-gray-300">
+          <a href="#" className="bg-white rounded-full px-3 text-[15px] py-1.5 text-gray-700 hover:text-black border border-gray-300 font-rubik">
             Log in
           </a>
-          <a href="#" className="bg-[#A9CF45] text-white px-4 py-1.5 rounded-full hover:bg-[#8BB833] border border-gray-300">
-            Sign up
-          </a>
+          <a
+          href="#"
+          className="inline-block rounded-full px-3 py-1.5 bg-gradient-to-b from-[#A9CF45] to-[#A9CF45] shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_4px_6px_rgba(0,0,0,0.1)]
+           border-[1px] border-[#6E8A28] text-[#1A1A1A] text-[15px] font-md text-center font-rubik"
+        >
+          Sign up
+        </a>
+
         </div>
 
         {/* Hamburger Icon - Mobile */}

@@ -74,7 +74,7 @@ const Footer = () => {
             href="#"
             className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
           >
-            <img src="/images/Apple logo.png" alt="Apple" className="w-6 h-6 mr-3" />
+            <img src="/images/apple-logo.png" alt="Apple" className="w-6 h-6 mr-3" />
             <div className="text-left text-sm leading-tight">
               <p className="text-white text-xs">Download on the</p>
               <p className="font-semibold text-white">App Store</p>

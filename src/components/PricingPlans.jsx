@@ -138,9 +138,9 @@ const PricingPlans = () => {
             <ul className="space-y-3 text-sm text-gray-600">
                 {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-2">
-                    <span className="w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-white border border-[#1d2114] flex items-center justify-center mt-0.5">
+                    <span className="w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-white border border-[#6E8A28] flex items-center justify-center mt-0.5">
                     <svg
-                        className="w-3 h-3 text-[#2E4A00]"
+                        className="w-3 h-3 text-[#6E8A28]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         >
@@ -215,9 +215,9 @@ const PricingPlans = () => {
             <ul className="space-y-3 text-sm text-gray-600">
                 {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-2">
-                    <span className="w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-white border border-[#1d2114] flex items-center justify-center mt-0.5">
+                    <span className="w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-white border border-[#6E8A28] flex items-center justify-center mt-0.5">
                     <svg
-                        className="w-3 h-3 text-[#2E4A00]"
+                        className="w-3 h-3 text-[#6E8A28]"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         >
