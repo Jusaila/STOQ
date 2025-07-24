@@ -12,7 +12,7 @@ const SeeDoGrowSection = () => {
   const [showVideo6, setShowVideo6] = useState(false); // Sixth section
 
   return (
-    <div className="bg-white">
+    <div className="bg-white text-rubik">
       {/* First Section */}
       
       <section

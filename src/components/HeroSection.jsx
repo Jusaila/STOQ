@@ -82,7 +82,7 @@ const HeroSection = () => {
   
 
   return (
-    <div className="relative h-screen overflow-hidden text-center">
+    <div className="relative h-screen overflow-hidden text-center text-rubik">
       {/* Background Video */}
       <video
         autoPlay

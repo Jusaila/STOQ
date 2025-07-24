@@ -83,7 +83,7 @@ const personallplans = [
 
 const PricingPlans = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white text-rubik">
         <section className="py-20 px-4 text-center">
         <h2 className="text-2xl md:text-5xl font-semibold text-[#4B6100] mt-4 mb-14">
             Choose your plan

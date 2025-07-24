@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-sm text-[#7A7A7A] px-6 pt-16">
+    <footer className="bg-white text-sm text-[#7A7A7A] px-6 pt-16 text-rubik">
 
       {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mb-16" />
