@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="w-full max-w-screen-2xl flex items-center justify-between bg-white/30 backdrop-blur-md border border-gray-300 shadow-md rounded-xl px-6 py-3">
 
         {/* Left Logo */}
-        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-6"/>
+        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-7"/>
 
         {/* Middle Nav Items - Desktop */}
         <div className="hidden md:flex space-x-24 text-md font-normal text-[#414651] relative">
