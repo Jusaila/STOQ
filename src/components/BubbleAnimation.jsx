@@ -1,3 +1,4 @@
+// src/components/BubbleAnimation.jsx
 import React, { useEffect, useState } from "react";
 
 const categories = [
@@ -12,34 +13,39 @@ const categories = [
   "KIDS",
 ];
 
-export default function BubbleAnimation({ onYChange }) {
+const BubbleAnimation = ({ setColorTemporarily }) => {
   const [yPosition, setYPosition] = useState(0);
-
-  // ADJUST THESE to tweak spacing, speed, and detection zone:
-  const spacing = 300;           // vertical gap between bubbles
+  const spacing = 320;
   const loopHeight = spacing * categories.length;
-  const gapDetectionRange = 140; // how close to center counts as "overlap"
-  const SCROLL_SPEED = 2;        // pixels/frame (higher = faster)
+  const gapDetectionRange = 120;
 
   useEffect(() => {
     let frameId;
     const animate = () => {
       setYPosition((prev) => {
-        const next = (prev - SCROLL_SPEED + loopHeight) % loopHeight;
+        const next = (prev - 2 + loopHeight) % loopHeight;
+
         let isAnyBubbleNearCenter = false;
 
         categories.forEach((_, i) => {
           const bubbleOffset = (next + i * spacing) % loopHeight;
-          const adjustedY =
-            bubbleOffset > loopHeight / 2 ? bubbleOffset - loopHeight : bubbleOffset;
+          const adjustedY = bubbleOffset > loopHeight / 2
+            ? bubbleOffset - loopHeight
+            : bubbleOffset;
 
           if (Math.abs(adjustedY) < gapDetectionRange) {
             isAnyBubbleNearCenter = true;
           }
         });
 
-        // report overlap state instantly
-        if (onYChange) onYChange(isAnyBubbleNearCenter);
+        if (setColorTemporarily) {
+          if (isAnyBubbleNearCenter) {
+            setColorTemporarily(0, 1500); // green for 1.5s
+          } else {
+            setColorTemporarily(1, 3000); // black for 3s
+          }
+        }
+
         return next;
       });
 
@@ -48,7 +54,7 @@ export default function BubbleAnimation({ onYChange }) {
 
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, [loopHeight, spacing, gapDetectionRange, onYChange]);
+  }, [loopHeight, spacing, setColorTemporarily]);
 
   const getY = (offset) => {
     const rawY = (yPosition + offset) % loopHeight;
@@ -75,15 +81,13 @@ export default function BubbleAnimation({ onYChange }) {
               style={{
                 transform: `translateY(${y}px)`,
                 background: `
-                  linear-gradient(180deg,
-                    rgba(255,255,255,0.3) 0%,
-                    rgba(255,255,255,0.1) 100%)
+                  linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)
                 `,
-                border: "1px solid rgba(255,255,255,0.4)",
+                border: "1px solid rgba(255, 255, 255, 0.4)",
                 boxShadow: `
-                  inset 0 0 10px rgba(255,255,255,0.3),
-                  inset 0 2px 4px rgba(255,255,255,0.2),
-                  0 4px 8px rgba(0,0,0,0.05)
+                  inset 0 0 10px rgba(255, 255, 255, 0.3),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.2),
+                  0 4px 8px rgba(0, 0, 0, 0.05)
                 `,
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
@@ -97,4 +101,6 @@ export default function BubbleAnimation({ onYChange }) {
       </div>
     </div>
   );
-}
+};
+
+export default BubbleAnimation;

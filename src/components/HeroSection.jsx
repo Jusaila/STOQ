@@ -7,44 +7,22 @@ import gsap from "gsap";
 // 0 = green, 1 = black
 const colorCycle = ["#6E8A28", "#303C14"];
 
-// tune these two:
-const BLACK_DELAY   = 3000;  // ms to wait **after gap appears** before going black
-const GREEN_DELAY   = 1500;  // ms to wait **after bubble appears** before going green
-
 export default function HeroSection() {
-  const tryRef       = useRef(null);
-  const [colorIndex, setColorIndex]     = useState(1);      // start black
-  const [bubbleDetected, setBubbleDetected] = useState(false);
-  const timerRef = useRef(null);
+  const tryRef = useRef(null);
+  const [colorIndex, setColorIndex] = useState(1); // start black
 
   useEffect(() => {
-    // clear any pending
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-
-    if (bubbleDetected) {
-      // bubble → schedule green
-      timerRef.current = window.setTimeout(() => {
-        setColorIndex(0);
-        timerRef.current = null;
-      }, GREEN_DELAY);
-    } else {
-      // gap → schedule black
-      timerRef.current = window.setTimeout(() => {
-        setColorIndex(1);
-        timerRef.current = null;
-      }, BLACK_DELAY);
-    }
-
-    return () => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-        timerRef.current = null;
-      }
+    let index = 1;
+    const cycle = () => {
+      index = (index + 1) % 2;
+      setColorIndex(index);
+      const delay = index === 0 ? 1900 : 1500; // green = 5s, black = 2s
+      setTimeout(cycle, delay);
     };
-  }, [bubbleDetected]);
+    const initialDelay = index === 0 ? 1900 : 1500;
+    const timeoutId = setTimeout(cycle, initialDelay);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   // GSAP pulsing + hover for the TRY bubble
   useEffect(() => {
@@ -111,13 +89,14 @@ export default function HeroSection() {
 
           {/* Color‑changing circle inside the “Q” */}
           <div
-          className="absolute w-[73px] h-[73px] rounded-full transition-colors duration-500 z-0"
-          style={{
-            top: "48%", left: "50.2%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: colorCycle[colorIndex],
-          }}
-        />
+            className="absolute w-[73px] h-[73px] rounded-full transition-colors duration-500 z-0"
+            style={{
+              top: "48%",
+              left: "50.2%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: colorCycle[colorIndex],
+            }}
+          />
 
           {/* TRY bubble */}
           <div
@@ -139,7 +118,7 @@ export default function HeroSection() {
 
           {/* Bubble Animation */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-            <BubbleAnimation onYChange={setBubbleDetected} />
+            <BubbleAnimation />
           </div>
         </div>
 
@@ -153,7 +132,6 @@ export default function HeroSection() {
               className="absolute w-full h-full pointer-events-none"
             />
             <div className="absolute inset-0 flex items-center px-3 gap-3 z-10">
-              {/* Apple Icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 814 1000"
