@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 
 const categories = [
   "FARMERS",
-  "RESTAURANTS",
-  "HOME & CARE",
+  "FOOD & COOK",
+  "HOUSEHOLDS",
   "HOBBYISTS",
   "FREELANCERS",
   "WELLNESS",
@@ -62,7 +62,7 @@ const BubbleAnimation = ({ setColorTemporarily }) => {
   };
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 text-rubik">
+    <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 font-bitcount">
       <div
         className="relative"
         style={{

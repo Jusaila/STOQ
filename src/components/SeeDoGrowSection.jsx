@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
 const SeeDoGrowSection = () => {
-   const [hoverVideo1, setHoverVideo1] = useState(false); // hover state
+
   const [showVideo1, setShowVideo1] = useState(false); // for first section
   const [showVideo2, setShowVideo2] = useState(false); // for second section
   const [showVideo3, setShowVideo3] = useState(false); // for third section
@@ -16,60 +16,67 @@ const SeeDoGrowSection = () => {
       {/* First Section */}
       
       <section
-        className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${
-          showVideo1 ? "h-[592px]" : "py-20"
-        } transition-all duration-500 ease-in-out bg-white overflow-hidden relative`}
+  className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${
+    showVideo1 ? "h-[592px]" : "py-20"
+  } transition-all duration-500 ease-in-out bg-white overflow-hidden relative`}
+>
+  <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+    {!showVideo1 ? (
+      <div
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+        onClick={() => setShowVideo1(true)} // ✅ click triggers only when image is visible
       >
-        <div
-          className="flex-shrink-0 mb-10 lg:mb-0 relative"
-          onMouseEnter={() => setShowVideo1(true)}
+        <img
+          src="/images/about.jpg"
+          alt="First Video"
+          className="object-cover w-full h-full rounded-full"
+        />
+      </div>
+    ) : (
+      <div
+        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // ✅ prevent parent click when clicking inside video
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ prevent button click from reopening video
+            setShowVideo1(false);
+          }}
+          className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
         >
-          {!showVideo1 ? (
-            <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
-              <img
-                src="/images/about.jpg"
-                alt="First Video"
-                className="object-cover w-full h-full rounded-full"
-              />
-            </div>
-          ) : (
-            <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
-              <button
-                onClick={() => setShowVideo1(false)}
-                className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
-              >
-                <FaTimes className="w-4 h-4" />
-              </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/bDVpI23q8Zg?autoplay=1&mute=1&loop=1&playlist=bDVpI23q8Zg"
-                title="STOQ Intro Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
-            </div>
-          )}
-        </div>
+          <FaTimes className="w-4 h-4" />
+        </button>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/bDVpI23q8Zg?autoplay=1&mute=1&loop=1&playlist=bDVpI23q8Zg"
+          title="STOQ Intro Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="rounded-xl"
+        ></iframe>
+      </div>
+    )}
+  </div>
 
-        {!showVideo1 && (
-          <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
-            <h2 className="text-[#4F6B1C] text-3xl lg:text-5xl font-bold leading-snug mb-2">
-              See. Do. Grow.
-            </h2>
-            <h3 className="text-[#4F6B1C] text-2xl lg:text-5xl font-bold mb-6">
-              This is how STOQ works
-            </h3>
-            <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-              See everything in one place. Do what matters in an instant—hand off to a teammate,
-              chat on the item, update its status, restock, or move it where it’s needed. Grow
-              efficiency with zero guesswork and nothing but clear, positive results.
-            </p>
-          </div>
-        )}
-      </section>
+  {!showVideo1 && (
+    <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
+      <h2 className="text-[#4F6B1C] text-3xl lg:text-5xl font-bold leading-snug mb-2">
+        See. Do. Grow.
+      </h2>
+      <h3 className="text-[#4F6B1C] text-2xl lg:text-5xl font-bold mb-6">
+        This is how STOQ works
+      </h3>
+      <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
+        See everything in one place. Do what matters in an instant—hand off to a teammate,
+        chat on the item, update its status, restock, or move it where it’s needed. Grow
+        efficiency with zero guesswork and nothing but clear, positive results.
+      </p>
+    </div>
+  )}
+</section>
+
 
       {/* Second Section */}
 
@@ -80,11 +87,12 @@ const SeeDoGrowSection = () => {
   } transition-all duration-500 ease-in-out bg-white overflow-hidden relative`}
 >
   <div
-    className="flex-shrink-0 mb-10 lg:mb-0 relative"
-    onMouseEnter={() => setShowVideo2(true)}
-  >
+    className="flex-shrink-0 mb-10 lg:mb-0 relative">
+   
     {!showVideo2 ? (
-      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
+      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+      onClick={() => setShowVideo2(true)} 
+      >
         <img
           src="/images/about.jpg"
           alt="Second Video"
@@ -92,9 +100,14 @@ const SeeDoGrowSection = () => {
         />
       </div>
     ) : (
-      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
+      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+      >
         <button
-          onClick={() => setShowVideo2(false)}
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ prevent button click from reopening video
+            setShowVideo2(false);
+          }}
           className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
         >
           <FaTimes className="w-4 h-4" />
@@ -128,26 +141,53 @@ const SeeDoGrowSection = () => {
 
 {/* THIRD SECTION */}
 <section className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${showVideo3 ? "h-[596px]" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-  <div className="flex-shrink-0 mb-10 lg:mb-0 relative" onMouseEnter={() => setShowVideo3(true)}>
+  <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
     {!showVideo3 ? (
-      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
-        <img src="/images/about.jpg" alt="Third Video" className="object-cover w-full h-full rounded-full" />
+      <div
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+        onClick={() => setShowVideo3(true)} // ✅ Only trigger video here
+      >
+        <img
+          src="/images/about.jpg"
+          alt="Third Video"
+          className="object-cover w-full h-full rounded-full"
+        />
       </div>
     ) : (
-      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
-        <button onClick={() => setShowVideo3(false)} className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md">
+      <div
+        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // ✅ Prevent reopening
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ Prevent bubbling
+            setShowVideo3(false);
+          }}
+          className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+        >
           <FaTimes className="w-4 h-4" />
         </button>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_3?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_3" title="STOQ Timeline Video" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen className="rounded-xl"></iframe>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/VIDEO_ID_3?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_3"
+          title="STOQ Timeline Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="rounded-xl"
+        ></iframe>
       </div>
     )}
   </div>
 
   {!showVideo3 && (
     <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#596F22] text-3xl lg:text-5xl font-bold leading-snug mb-4">One Live Timeline, Zero Chaos.</h2>
+      <h2 className="text-[#596F22] text-3xl lg:text-5xl font-bold leading-snug mb-4">
+        One Live Timeline, Zero Chaos.
+      </h2>
       <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-      STOQ lets you run everything with confidence. It maps each item’s life cycle, so you always see what’s on hand, what’s running low, and the next action to take.
+        STOQ lets you run everything with confidence. It maps each item’s life cycle, so you always see what’s on hand, what’s running low, and the next action to take.
       </p>
     </div>
   )}
@@ -156,24 +196,51 @@ const SeeDoGrowSection = () => {
 
 {/* FOURTH SECTION */}
 <section className={`flex flex-col lg:flex-row-reverse items-center justify-center px-4 lg:px-10 ${showVideo6 ? "h-[596px]" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-  <div className="flex-shrink-0 mb-10 lg:mb-0 relative" onMouseEnter={() => setShowVideo6(true)}>
-    {!showVideo6 ? (
-      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
-        <img src="/images/about.jpg" alt="Sixth Video" className="object-cover w-full h-full rounded-full" />
+  <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+    {!showVideo4 ? (
+      <div
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+        onClick={() => setShowVideo4(true)} // ✅ only image triggers open
+      >
+        <img
+          src="/images/about.jpg"
+          alt="Sixth Video"
+          className="object-cover w-full h-full rounded-full"
+        />
       </div>
     ) : (
-      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
-        <button onClick={() => setShowVideo6(false)} className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md">
+      <div
+        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // ✅ prevent accidental reopen
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ stop bubbling
+            setShowVideo4(false);
+          }}
+          className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+        >
           <FaTimes className="w-4 h-4" />
         </button>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_6?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_6" title="STOQ Clusters Video" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen className="rounded-xl"></iframe>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/VIDEO_ID_6?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_6"
+          title="STOQ Clusters Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="rounded-xl"
+        ></iframe>
       </div>
     )}
   </div>
 
-  {!showVideo6 && (
+  {!showVideo4 && (
     <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">STOQ Clusters multi-domain universe</h2>
+      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
+        STOQ Clusters multi-domain universe
+      </h2>
       <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
         One system, multiple worlds—work, home, hobbies, family—all in one place.
       </p>
@@ -184,26 +251,53 @@ const SeeDoGrowSection = () => {
 
 {/* FIFTH SECTION */}
 <section className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${showVideo5 ? "h-[596px]" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-  <div className="flex-shrink-0 mb-10 lg:mb-0 relative" onMouseEnter={() => setShowVideo5(true)}>
+  <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
     {!showVideo5 ? (
-      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
-        <img src="/images/about.jpg" alt="Fifth Video" className="object-cover w-full h-full rounded-full" />
+      <div
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+        onClick={() => setShowVideo5(true)} // ✅ only triggers when image clicked
+      >
+        <img
+          src="/images/about.jpg"
+          alt="Fifth Video"
+          className="object-cover w-full h-full rounded-full"
+        />
       </div>
     ) : (
-      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
-        <button onClick={() => setShowVideo5(false)} className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md">
+      <div
+        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // ✅ prevent bubbling
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ prevent reopen
+            setShowVideo5(false);
+          }}
+          className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+        >
           <FaTimes className="w-4 h-4" />
         </button>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bDVpI23q8Zg?autoplay=1&mute=1&loop=1&playlist=bDVpI23q8Zg" title="STOQ Work Video" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen className="rounded-xl"></iframe>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/bDVpI23q8Zg?autoplay=1&mute=1&loop=1&playlist=bDVpI23q8Zg"
+          title="STOQ Work Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="rounded-xl"
+        ></iframe>
       </div>
     )}
   </div>
 
   {!showVideo5 && (
     <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#596F22] text-3xl lg:text-5xl font-bold leading-snug mb-6">Works the way you work</h2>
+      <h2 className="text-[#596F22] text-3xl lg:text-5xl font-bold leading-snug mb-6">
+        Works the way you work
+      </h2>
       <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-      Log materials in units your crew uses—kilos, packs, meters. One tap converts any cost to any currency.
+        Log materials in units your crew uses—kilos, packs, meters. One tap converts any cost to any currency.
       </p>
     </div>
   )}
@@ -211,30 +305,58 @@ const SeeDoGrowSection = () => {
 
 {/* SIXTH SECTION */}
 <section className={`flex flex-col lg:flex-row-reverse items-center justify-center px-4 lg:px-10 ${showVideo4 ? "h-[596px]" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-  <div className="flex-shrink-0 mb-10 lg:mb-0 relative" onMouseEnter={() => setShowVideo4(true)}>
-    {!showVideo4 ? (
-      <div className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full">
-        <img src="/images/about.jpg" alt="Fourth Video" className="object-cover w-full h-full rounded-full" />
+  <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+    {!showVideo6 ? (
+      <div
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
+        onClick={() => setShowVideo6(true)} // ✅ Only image triggers video
+      >
+        <img
+          src="/images/about.jpg"
+          alt="Fourth Video"
+          className="object-cover w-full h-full rounded-full"
+        />
       </div>
     ) : (
-      <div className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden">
-        <button onClick={() => setShowVideo4(false)} className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md">
+      <div
+        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // ✅ Prevent reopen when clicking inside
+      >
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // ✅ Prevent bubbling to parent
+            setShowVideo6(false);
+          }}
+          className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+        >
           <FaTimes className="w-4 h-4" />
         </button>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_4?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_4" title="STOQ Sync Video" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen className="rounded-xl"></iframe>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/VIDEO_ID_4?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_4"
+          title="STOQ Sync Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="rounded-xl"
+        ></iframe>
       </div>
     )}
   </div>
 
-  {!showVideo4 && (
+  {!showVideo6 && (
     <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">Live, always-synced updates</h2>
+      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
+        Live, always-synced updates
+      </h2>
       <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
         Everyone sees the same info in real time. No delays, no duplicate effort.
       </p>
     </div>
   )}
 </section>
+
 
      {/* lets get started button at center */}
         <div className="flex justify-center py-20">

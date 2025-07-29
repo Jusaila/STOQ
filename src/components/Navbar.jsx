@@ -48,9 +48,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Industries", items: industryItems.map(i => ({ label: i.label, link: i.link })) },
-    { name: "Features", items: featuresItems.map(i => ({ label: i.label, link: i.link })) },
+    { name: "Features", items: [], link: "#Features"},
     { name: "Uses's Cases", items: [], link: "#Uses's Cases" },
-    { name: "Pricing", items: pricingItems.map(i => ({ label: i.label, link: i.link })) },
+    { name: "Pricing", items: [], link: "#Pricing" },
     { name: "About STOQ", items: [], link: "#About STOQ" },
   ];
   
@@ -73,41 +73,57 @@ const Navbar = () => {
                 {menu.items.length > 0 && <ChevronDown size={14} />}
               </button>
 
-              {menu.items.length > 0 && openDropdown === menu.name && (
+              {menu.items.length > 0 && openDropdown === menu.name && menu.name === "Industries" && (
               <div
-              className={`absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 ${
-                menu.name === "Pricing" ? "w-[240px] left-1/2 -translate-x-1/2" : "w-[700px] left-0"
-              }`}
-            >
-            
+                className={`absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 ${
+                  menu.name === "Pricing" ? "w-[240px] left-1/2 -translate-x-1/2" : "w-[700px] left-0"
+                }`}
+              >
                 <div className="font-semibold text-gray-800 mb-4 w-full text-left">
                   {menu.name}
                 </div>
-                <div
-                className={`${
-                  menu.name === "Pricing"
-                    ? "flex flex-col space-y-2 w-[200px] px-2 py-1"
-                    : "grid grid-cols-3 gap-x-6 gap-y-4 w-[700px]"
-                } text-gray-700 text-[14px]`}
-              >
-
-                {(menu.name === "Industries"
-                  ? industryItems
-                  : menu.name === "Features"
-                  ? featuresItems
-                  : menu.name === "Pricing"
-                  ? pricingItems
-                  : []
-                ).map((item, i) => (
-                  <a key={i} href={item.link} className="flex items-center gap-2 hover:text-black">
-                    <img src={item.icon} alt={item.label} className="w-4 h-4 object-contain" />
-                    <span>{item.label}</span>
-                  </a>
-                ))}
-              </div>
-
+                <div className="grid grid-cols-3 gap-x-6 gap-y-4 w-[700px] text-gray-700 text-[14px]">
+                  {industryItems.map((item, i) => (
+                    <a key={i} href={item.link} className="flex items-center gap-2 hover:text-black">
+                      <img src={item.icon} alt={item.label} className="w-4 h-4 object-contain" />
+                      <span>{item.label}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
+
+            {/* 
+              Uncomment if you want to re-enable Features dropdown:
+            {menu.items.length > 0 && openDropdown === menu.name && menu.name === "Features" && (
+              <div className="absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 w-[700px] left-0">
+                <div className="font-semibold text-gray-800 mb-4 w-full text-left">Features</div>
+                <div className="grid grid-cols-3 gap-x-6 gap-y-4 w-[700px] text-gray-700 text-[14px]">
+                  {featuresItems.map((item, i) => (
+                    <a key={i} href={item.link} className="flex items-center gap-2 hover:text-black">
+                      <img src={item.icon} alt={item.label} className="w-4 h-4 object-contain" />
+                      <span>{item.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+              Uncomment if you want to re-enable Pricing dropdown:
+            {menu.items.length > 0 && openDropdown === menu.name && menu.name === "Pricing" && (
+              <div className="absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 w-[240px] left-1/2 -translate-x-1/2">
+                <div className="font-semibold text-gray-800 mb-4 w-full text-left">Pricing</div>
+                <div className="flex flex-col space-y-2 w-[200px] px-2 py-1 text-gray-700 text-[14px]">
+                  {pricingItems.map((item, i) => (
+                    <a key={i} href={item.link} className="flex items-center gap-2 hover:text-black">
+                      <img src={item.icon} alt={item.label} className="w-4 h-4 object-contain" />
+                      <span>{item.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+            */}
 
 
             </div>
