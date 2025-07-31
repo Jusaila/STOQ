@@ -19,8 +19,8 @@ const App = () => {
 
          {/* Custom pages per category */}
         <Route path="/households" element={<HouseholdsPage />} />
-        <Route path="/freelancers" element={<FreelancersPage />} />
-        <Route path="/farmers" element={<FarmersPage />} />
+        {/* <Route path="/freelancers" element={<FreelancersPage />} />
+        <Route path="/farmers" element={<FarmersPage />} /> */}
       </Routes>
     </Router>
   );
