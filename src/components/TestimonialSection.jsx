@@ -54,7 +54,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="py-16 md:pl-20 bg-white text-rubik">
+    <section className="py-16 md:pl-20 bg-white font-rubik">
       <h2 className="text-3xl font-bold text-[#8CB031] mb-8">
         Don’t just take our word for it
       </h2>

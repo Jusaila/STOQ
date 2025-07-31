@@ -1,22 +1,28 @@
 import React from "react";
-import BubbleScrollSection from "./components/BubbleAnimation";
-import Navigation from "./components/Navbar";
-import SeeDoGrowSection from "./components/SeeDoGrowSection";
-import BubbleAutoScroll from "./components/BubbleAnimation";
-import HeroSection from "./components/HeroSection";
-import TestimonialSection from "./components/TestimonialSection";
-import PricingPlans from "./components/PricingPlans";
-import Footer from "./components/Footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import LandingPage from "./pages/LandingPage";
+
+// Import your category-specific pages
+import HouseholdsPage from "./pages/categories/HouseholdsPage";
 
 const App = () => {
   return (
-    <div>
-      <HeroSection />
-      <SeeDoGrowSection />
-      <TestimonialSection />
-      <PricingPlans />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* Landing page route */}
+        <Route path="/" element={<LandingPage />} />
+
+         {/* Custom pages per category */}
+        <Route path="/households" element={<HouseholdsPage />} />
+        <Route path="/freelancers" element={<FreelancersPage />} />
+        <Route path="/farmers" element={<FarmersPage />} />
+      </Routes>
+    </Router>
   );
 };
 

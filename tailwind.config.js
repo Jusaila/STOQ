@@ -4,7 +4,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      rubik: ['Bitcount', 'sans-serif'],
+      fontFamily: {
+        rubik: ['"Rubik"', 'sans-serif'],
+
+      },
     },
   },
  plugins: [require("tailwind-scrollbar-hide")],
