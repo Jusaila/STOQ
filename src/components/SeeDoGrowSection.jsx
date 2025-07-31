@@ -12,19 +12,20 @@ const SeeDoGrowSection = () => {
   const [showVideo6, setShowVideo6] = useState(false); // Sixth section
 
   return (
-    <div className="bg-white text-rubik">
+    <div className="bg-white font-rubik">
       {/* First Section */}
       
       <section
   className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${
-    showVideo1 ? "h-[592px]" : "py-20"
+    showVideo1 ? "h-auto lg:h-[592px]" : "py-20"
   } transition-all duration-500 ease-in-out bg-white overflow-hidden relative`}
 >
+  {/* Video or Image - Left Side */}
   <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
     {!showVideo1 ? (
       <div
         className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
-        onClick={() => setShowVideo1(true)} // ✅ click triggers only when image is visible
+        onClick={() => setShowVideo1(true)}
       >
         <img
           src="/images/about.jpg"
@@ -34,12 +35,12 @@ const SeeDoGrowSection = () => {
       </div>
     ) : (
       <div
-        className="relative w-[90vw] max-w-full h-[592px] rounded-xl overflow-hidden"
-        onClick={(e) => e.stopPropagation()} // ✅ prevent parent click when clicking inside video
+        className="relative w-[380px] h-[214px] lg:w-[450px] lg:h-[450px] rounded-xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={(e) => {
-            e.stopPropagation(); // ✅ prevent button click from reopening video
+            e.stopPropagation();
             setShowVideo1(false);
           }}
           className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
@@ -60,22 +61,22 @@ const SeeDoGrowSection = () => {
     )}
   </div>
 
-  {!showVideo1 && (
-    <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#4F6B1C] text-3xl lg:text-5xl font-bold leading-snug mb-2">
-        See. Do. Grow.
-      </h2>
-      <h3 className="text-[#4F6B1C] text-2xl lg:text-5xl font-bold mb-6">
-        This is how STOQ works
-      </h3>
-      <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-        See everything in one place. Do what matters in an instant—hand off to a teammate,
-        chat on the item, update its status, restock, or move it where it’s needed. Grow
-        efficiency with zero guesswork and nothing but clear, positive results.
-      </p>
-    </div>
-  )}
+  {/* Text Section - Right Side */}
+  <div className="lg:ml-16 text-center lg:text-left w-full lg:w-[800px]">
+    <h2 className="text-[#4F6B1C] text-3xl lg:text-5xl font-bold leading-snug mb-2">
+      See. Do. Grow.
+    </h2>
+    <h3 className="text-[#4F6B1C] text-2xl lg:text-5xl font-bold mb-6">
+      This is how STOQ works
+    </h3>
+    <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
+      See everything in one place. Do what matters in an instant—hand off to a teammate,
+      chat on the item, update its status, restock, or move it where it’s needed. Grow
+      efficiency with zero guesswork and nothing but clear, positive results.
+    </p>
+  </div>
 </section>
+
 
 
       {/* Second Section */}
