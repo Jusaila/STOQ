@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const categories = [
   "FARMERS",
-  "FOOD & COOK",
   "HOUSEHOLDS",
+  "FOOD & COOK",
   "HOBBYISTS",
   "FREELANCERS",
   "WELLNESS",

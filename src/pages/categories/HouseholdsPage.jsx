@@ -51,9 +51,9 @@ const HouseholdPage = () => {
 
           {/* TRY Bubble Image */}
           <div
-            className="absolute w-[140px] h-[140px] rounded-full overflow-hidden flex items-center justify-center z-20 cursor-pointer"
+            className="absolute w-[390px] h-[390px] rounded-full overflow-hidden flex items-center justify-center z-20 cursor-pointer"
             style={{
-              top: "49.2%",
+              top: "49%",
               left: "77%",
               transform: "translate(-50%, -50%)",
             }}
