@@ -79,7 +79,7 @@ export default function HeroSection() {
         playsInline
         className="absolute w-full h-full object-cover z-0 blur-sm"
       >
-        <source src="/videos/backgound new.mp4" type="video/mp4" />
+        <source src="/videos/WhatsApp Video.mp4" type="video/mp4" />
       </video>
 
       <Navbar />
@@ -116,7 +116,7 @@ export default function HeroSection() {
             onClick={handleTryClick}
             className="try-circle absolute w-[140px] h-[140px] rounded-full overflow-hidden flex items-center justify-center z-20"
             style={{
-              top: "49.2%",
+              top: "49.3%",
               left: "77%",
               transform: "translate(-50%, -50%)",
               cursor: "pointer",
