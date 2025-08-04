@@ -8,7 +8,7 @@ const industryItems = [
   { label: "Home Services", icon: "/icons/Vector4.png", link: "#Home Services" },
   { label: "Restaurants", icon: "/icons/Vector3.png", link: "#Restaurants" },
   { label: "Workshops", icon: "/icons/Vector2.png", link: "#Workshops" },
-  { label: "Households", icon: "/icons/Vector3.png", link: "#Households" },
+  { label: "Households", icon: "/icons/Vector3.png", link: "Households" },
   { label: "Farmers", icon: "/icons/Vector.png", link: "#Farmers" },
   { label: "Hobby/Collections", icon: "/icons/Vector3.png", link: "#Hobby/Collections" },
   { label: "Wine lovers", icon: "/icons/Vector.png", link: "#Wine lovers" },

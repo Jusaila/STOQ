@@ -523,7 +523,7 @@ useEffect(() => {
         </div>
 
          {/* Divider Line */}
-      <hr className="border-t-2 border-gray-300 mx-20 mb-2" />
+      <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
     </div>
 
