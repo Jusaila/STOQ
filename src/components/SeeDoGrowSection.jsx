@@ -28,7 +28,7 @@ const SeeDoGrowSection = () => {
   useEffect(() => {
     const observer1 = new IntersectionObserver(
       ([entry]) => setPlayInCircle1(entry.isIntersecting),
-      { threshold: 0.8 }
+      { threshold: 1 }
     );
     if (circleRef1.current) observer1.observe(circleRef1.current);
     return () => {
@@ -40,7 +40,7 @@ const SeeDoGrowSection = () => {
   useEffect(() => {
     const observer2 = new IntersectionObserver(
       ([entry]) => setPlayInCircle2(entry.isIntersecting),
-      { threshold: 0.8 }
+      { threshold: 1 }
     );
     if (circleRef2.current) observer2.observe(circleRef2.current);
     return () => {
@@ -52,7 +52,7 @@ const SeeDoGrowSection = () => {
 useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => setPlayInCircle3(entry.isIntersecting),
-    { threshold: 0.8 }
+    { threshold: 1 }
   );
   if (circleRef3.current) observer.observe(circleRef3.current);
   return () => {
@@ -64,7 +64,7 @@ useEffect(() => {
 useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => setPlayInCircle4(entry.isIntersecting),
-    { threshold: 0.8 }
+    { threshold: 1 }
   );
   if (circleRef4.current) observer.observe(circleRef4.current);
   return () => {
@@ -75,7 +75,7 @@ useEffect(() => {
 useEffect(() => {
   const observer5 = new IntersectionObserver(
     ([entry]) => setPlayInCircle5(entry.isIntersecting),
-    { threshold: 0.8 }
+    { threshold: 1 }
   );
   if (circleRef5.current) observer5.observe(circleRef5.current);
   return () => {
@@ -86,7 +86,7 @@ useEffect(() => {
 useEffect(() => {
   const observer6 = new IntersectionObserver(
     ([entry]) => setPlayInCircle6(entry.isIntersecting),
-    { threshold: 0.8 }
+    { threshold: 1 }
   );
   if (circleRef6.current) observer6.observe(circleRef6.current);
   return () => {
