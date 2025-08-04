@@ -183,14 +183,61 @@ const householdFeatures = [
         </div>
       </section>
 
-      {/* HomeFeaturesSection */}
+      <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-2">
+      <div className="max-w-7xl w-full">
+        {/* Header */}
+        <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
+          Home runs better with <span className="text-[#181D27]">STOQ</span>.
+        </h1>
+        
+        <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
+          See what's on hand, act together, and evolve into everyday peace of mind.
+        </p>
 
-      <HomeFeaturesSection
-      title="Home runs better with STOQ."
-      subtitle="See what’s on hand, act together, and evolve into everyday peace of mind."
-      features={householdFeatures}
-      buttonText="Let's get started"
-    />
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
+          {/* Simple and Fun */}
+          <div className="flex flex-col items-center">
+            <div className="w-37 h-38 mb-6 relative">
+            <img src="/images/household/simple.png" alt= "simple" className="w-[260px] h-[200px] mb-4" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Simple and Fun</h3>
+          </div>
+
+          {/* Find Tings */}
+          <div className="flex flex-col items-center">
+            <div className="w-37 h-38 mb-6 relative">
+              <img src="/images/household/find.png" alt= "find" className="w-[260px] h-[200px] mb-4" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Find Tings</h3>
+          </div>
+
+          {/* Chat together */}
+          <div className="flex flex-col items-center">
+            <div className="w-37 h-38 mb-6 relative">
+            <img src="/images/household/chat.png" alt= "chat" className="w-[260px] h-[200px] mb-4" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Chat together</h3>
+          </div>
+
+          {/* Track */}
+          <div className="flex flex-col items-center">
+            <div className="w-37 h-38 mb-6 relative">
+            <img src="/images/household/tr.png" alt= "track" className="w-[200px] h-[200px] mb-4" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Track</h3>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+      <div className="flex justify-center mt-12">
+        <button className="bg-[#A9CF45] hover:bg-green-500 text-gray-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-200 shadow-lg">
+          Let's get started
+        </button>
+      </div>
+
+      </div>
+    </section>
     </div>
   );
 };

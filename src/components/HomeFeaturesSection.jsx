@@ -3,7 +3,7 @@ import React from "react";
 const HomeFeaturesSection = ({ title, subtitle, features, buttonText }) => {
   return (
     <div className="w-full py-20 bg-white font-rubik">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-[1300px] mx-auto px-4 text-center">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#141807] mb-2">
           {title}
