@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import HomeFeaturesSection from "../../components/HomeFeaturesSection";
+import Footer from "../../components/Footer";
+import TestimonialSection from "../../components/TestimonialSection";
 
 const householdFeatures = [
   {
@@ -183,7 +185,7 @@ const householdFeatures = [
         </div>
       </section>
 
-      <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-2">
+      <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-2 font-rubik">
       <div className="max-w-7xl w-full">
         {/* Header */}
         <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
@@ -238,6 +240,10 @@ const householdFeatures = [
 
       </div>
     </section>
+
+    <TestimonialSection />
+
+    <Footer />
     </div>
   );
 };
