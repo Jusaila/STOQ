@@ -16,7 +16,7 @@ const Footer = () => {
             <li><a href="#Workshops">Workshops</a></li>
             <li><a href="#Farmers">Farmers</a></li>
             <li><a href="#Restaurant">Food & Cook</a></li>
-            <li><a href="#Home & Care">Home & Care</a></li>
+            <li><a href="Households">Households</a></li>
           </ul>
         </div>
 
