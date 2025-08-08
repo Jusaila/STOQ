@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 
 // Import your category-specific pages
 import HouseholdsPage from "./pages/categories/HouseholdsPage";
+import ConstructionPage from "./pages/categories/ConstructionPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
 
          {/* Custom pages per category */}
         <Route path="/households" element={<HouseholdsPage />} />
+        <Route path="/construction" element={<ConstructionPage />} />
         {/* <Route path="/freelancers" element={<FreelancersPage />} />
         <Route path="/farmers" element={<FarmersPage />} /> */}
       </Routes>

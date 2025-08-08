@@ -2,8 +2,9 @@ import React from "react";
 import HeroSection from "../components/HeroSection";
 import SeeDoGrowSection from "../components/SeeDoGrowSection";
 import TestimonialSection from "../components/TestimonialSection";
-import PricingPlans from "../components/PricingPlans";
 import Footer from "../components/Footer";
+import ProffessionalPricingPlans from "../components/ProffessionalPricingPlans";
+import PersonalPricingPlans from "../components/PersonalPricingPlans";
 
 const LandingPage = () => {
   return (
@@ -11,7 +12,8 @@ const LandingPage = () => {
       <HeroSection />
       <SeeDoGrowSection />
       <TestimonialSection />
-      <PricingPlans />
+      <ProffessionalPricingPlans />
+      <PersonalPricingPlans />
       <Footer />
     </>
   );

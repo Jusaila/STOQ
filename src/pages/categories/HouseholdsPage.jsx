@@ -2,28 +2,11 @@
 import Navbar from "../../components/Navbar";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import HomeFeaturesSection from "../../components/HomeFeaturesSection";
+
 import Footer from "../../components/Footer";
 import TestimonialSection from "../../components/TestimonialSection";
+import PersonalPricingPlans from "../../components/PersonalPricingPlans";
 
-const householdFeatures = [
-  {
-    image: "/images/household/simple.png",
-    label: "Simple and Fun",
-  },
-  {
-    image: "/images/household/find.png",
-    label: "Find Tings",
-  },
-  {
-    image: "/images/household/chat.png",
-    label: "Chat together",
-  },
-  {
-    image: "/images/household/tr.png",
-    label: "Track All",
-  },
-];
 
     const HouseholdPage = () => {
         const tryRef = useRef(null); // ✅ moved inside
@@ -78,7 +61,7 @@ const householdFeatures = [
           {/* LEFT TOP TEXT */}
           <div className="absolute top-[120px] left-[150px] text-left">
             <h2 className="text-[#6E8A28] text-[50px] font-bold">HOME <span className="text-[#62635b]">Supply Harmony.</span></h2>
-            <p className="text-[#63645c] text-xl mt-1">See supplies. Act together. Enjoy calm.</p>
+            <p className="text-[#63645c] text-xl mt-1 font-semibold">See supplies. Act together. Enjoy calm.</p>
           </div>
 
           {/* STOQ LOGO */}
@@ -185,63 +168,138 @@ const householdFeatures = [
         </div>
       </section>
 
-      <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-2 font-rubik">
-      <div className="max-w-7xl w-full">
-        {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
-          Home runs better with <span className="text-[#181D27]">STOQ</span>.
-        </h1>
+      <section className="bg-white flex flex-col items-center justify-center px-28 font-rubik py-20">
+        <div className="max-w-8xl w-full">
+          {/* Header */}
+          <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
+            Home runs better with <span className="text-[#181D27]">STOQ</span>.
+          </h1>
+
+          <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
+            See what's on hand, act together, and evolve into everyday peace of mind.
+          </p>
+
+          {/* Scrollable Feature Cards */}
+      <div className="w-screen overflow-x-auto scrollbar-hide">
+        <div className="flex gap-8 whitespace-nowrap w-max pl-4 pr-0">
+          {[
+            { img: "simple.png", label: "Simple and Fun" },
+            { img: "find.png", label: "Find Tings" },
+            { img: "chat.png", label: "Chat together" },
+            { img: "track.png", label: "Track Usage" },
+            { img: "declu.png", label: "Declutter" },
+            { img: "stock.png", label: "Always in stock" },
+            { img: "reminder.png", label: "Reminder system" },
+            { img: "log.png", label: "Log storage" },
+            { img: "calm.png", label: "Calm, curated home" },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col items-center flex-shrink-0 w-[320px]">
+              <img
+                src={`/images/household/${item.img}`}
+                alt={item.label}
+                className="w-[350px] h-[350px] object-contain mb-2 mx-auto"
+              />
+              <p className="text-xl font-semibold text-center text-gray-800">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex justify-center items-center pt-20">
+      <a
+        href="/get-started"
+        className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
+        style={{
+          backgroundImage: "url('/images/Actions.png')", // Update path if needed
+        }}
+          >
+        Let's get started
+      </a>
+    </div>
+        </div>
+      </section>
+
+
+    <section className="relative w-full bg-white pt-16 pb-24 px-2 md:px-4 overflow-hidden font-rubik">
+      {/* Right Section BG Image — position absolute and top-right aligned */}
+      <img
+        src="/images/Clip path group.png"
+        alt="right gradient"
+        className="absolute top-1 right-0 w-[550px] object-contain pointer-events-none z-0"
+      />
+
+      <div className="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-16 px-24">
         
-        <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
-          See what's on hand, act together, and evolve into everyday peace of mind.
-        </p>
+        {/* Left Section */}
+        <div className="flex flex-col text-lg">
+          <h2 className="text-[#6E8A28] font-medium text-5xl mb-6">See. Do. Enjoy.</h2>
 
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-24">
-          {/* Simple and Fun */}
-          <div className="flex flex-col items-center">
-            <div className="w-37 h-38 mb-6 relative">
-            <img src="/images/household/simple.png" alt= "simple" className="w-[260px] h-[200px] mb-4" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Simple and Fun</h3>
+          <div>
+            <p className="text-[#535862] font-normal leading-relaxed mb-4">
+              Groceries, cleaners, meds, bulbs—STOQ is the home inventory app that keeps every essential in sight and in stock.
+              One shared app lets every family member see exactly what’s in the house—and where to find it.
+            </p>
+            <p className="text-[#535862] font-normal leading-relaxed mb-0">
+              Instant clarity from the first use. STOQ’s game-style interface makes using the app fun—no training required for
+              You, Your Family or Your Household Members.
+            </p>
           </div>
 
-          {/* Find Tings */}
-          <div className="flex flex-col items-center">
-            <div className="w-37 h-38 mb-6 relative">
-              <img src="/images/household/find.png" alt= "find" className="w-[260px] h-[200px] mb-4" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Find Tings</h3>
-          </div>
-
-          {/* Chat together */}
-          <div className="flex flex-col items-center">
-            <div className="w-37 h-38 mb-6 relative">
-            <img src="/images/household/chat.png" alt= "chat" className="w-[260px] h-[200px] mb-4" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Chat together</h3>
-          </div>
-
-          {/* Track */}
-          <div className="flex flex-col items-center">
-            <div className="w-37 h-38 mb-6 relative">
-            <img src="/images/household/tr.png" alt= "track" className="w-[200px] h-[200px] mb-4" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Track</h3>
+          {/* Left Image — below text & flush left */}
+          <div className="-ml-[120px] m-0 p-0 pt-0">
+            <img
+              src="/images/Clip path group-left.png"
+              alt="left gradient"
+              className="w-[550px] object-contain"
+            />
           </div>
         </div>
 
-        {/* CTA Button */}
-      <div className="flex justify-center mt-12">
-        <button className="bg-[#A9CF45] hover:bg-green-500 text-gray-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-200 shadow-lg">
-          Let's get started
-        </button>
-      </div>
-
+        {/* Right Section */}
+        <div className="relative flex flex-col justify-start text-lg pt-[2.85rem]">
+          <p className="text-[#535862] font-normal leading-relaxed mb-4">
+            In-app chat sits on every Household item card—complete with location, expiry, and reorder status—so you can restock in seconds.
+          </p>
+          <p className="text-[#535862] font-normal leading-relaxed mb-4">
+            STOQ works for everyone—use it on your own, share it with family or housemates, and keep your home-help team in sync.
+          </p>
+          <p className="text-[#535862] font-normal leading-relaxed mb-4">
+            STOQ Clusters is One system, multiple worlds—work, home, hobbies, family—all in one place.
+          </p>
+        </div>
       </div>
     </section>
 
+
     <TestimonialSection />
+    <PersonalPricingPlans />
+     {/* CTA Button */}
+    <div className="flex justify-center mt-0 pt-0 -translate-y-2">
+      <a 
+        href="/pricing" 
+        className="text-[#8CB031] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline"
+      >
+        See all plans
+      </a>
+    </div>
+ 
+    {/* call to action */}
+    <section className="w-full py-40 flex flex-col items-center justify-center text-center px-4">
+      <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-4">
+        Ready to run your home like clockwork?
+      </h2>
+      <p className="text-gray-500 text-base md:text-xl mb-6">
+        Start your free trial now and see every item in one tidy home.
+      </p>
+      <div className="flex gap-4">
+        <button className="border-[3px] border-gray-100 text-gray-900 font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition">
+          Watch Demo
+        </button>
+        <button className="bg-[#6E8A28] text-white font-semibold px-6 py-2 rounded-md hover:bg-[#6e8a28] transition">
+          Get started
+        </button>
+      </div>
+    </section>
 
     <Footer />
     </div>

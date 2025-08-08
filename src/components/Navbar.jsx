@@ -4,7 +4,7 @@ import "../index.css";
 
 // Industry items with icons
 const industryItems = [
-  { label: "Construction", icon: "/icons/Vector.png", link: "#Construction" },
+  { label: "Construction", icon: "/icons/Vector.png", link: "construction" },
   { label: "Home Services", icon: "/icons/Vector4.png", link: "#Home Services" },
   { label: "Restaurants", icon: "/icons/Vector3.png", link: "#Restaurants" },
   { label: "Workshops", icon: "/icons/Vector2.png", link: "#Workshops" },
