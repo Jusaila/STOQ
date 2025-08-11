@@ -9,7 +9,49 @@ import PersonalPricingPlans from "../../components/ProffessionalPricingPlans";
 import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlans";
 
 
-    const HouseholdPage = () => {
+    const ConstructionPage = () => {
+
+      // Ref for the scrollable container
+      const scrollRef = useRef(null);
+
+      useEffect(() => {
+        const container = scrollRef.current;
+        let scrollAmount = 0;
+        let speed = 0.5; // Adjust scrolling speed
+        // let isPaused = false;
+    
+        // // Pause on hover
+        // container.addEventListener("mouseenter", () => (isPaused = true));
+        // container.addEventListener("mouseleave", () => (isPaused = false));
+    
+        function autoScroll() {
+          if (container) {
+            scrollAmount += speed;
+            container.scrollLeft = scrollAmount;
+
+            // Loop back to start for infinite scroll
+            if (scrollAmount >= container.scrollWidth / 2) {
+              scrollAmount = 0;
+            }
+          }
+          requestAnimationFrame(autoScroll);
+        }
+
+        autoScroll();
+      }, []);
+    
+      const items = [
+        { img: "qr.png", label: "QR tagging" },
+        { img: "site.png", label: "Site/location mapping" },
+        { img: "inventory.png", label: "Centralized inventory" },
+        { img: "role.png", label: "Role-based access" },
+        { img: "ui.png", label: "Intuitive UI" },
+        { img: "account.png", label: "Team accountability" },
+        { img: "return.png", label: "Return/ transfer items" },
+        { img: "dash.png", label: "Usage analytics dashboard" },
+        { img: "business.png", label: "Efficient business" },
+      ];
+
         const tryRef = useRef(null); // ✅ moved inside
       
         useEffect(() => {
@@ -169,41 +211,33 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
         </div>
       </section>
 
-      <section className="bg-white flex flex-col items-center px-6 md:px-28 py-20 font-rubik overflow-hidden">
-      <div className="w-full max-w-8xl">
-        {/* Header */}
+      <section className="bg-white flex flex-col items-center justify-center px-28 font-rubik py-20">
+      <div className="max-w-8xl w-full">
         <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
-          No delays. No guesswork. Just smarter decisions.
+          Home runs better with <span className="text-[#181D27]">STOQ</span>.
         </h1>
 
-        <p className="text-gray-600 text-lg mb-16 max-w-3xl text-left">
-          Track every material in real time. Act fast—give, move, use, flag, or restock the moment it’s needed—so your construction business grows with confident efficiency.
+        <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
+          See what's on hand, act together, and evolve into everyday peace of mind.
         </p>
 
         {/* Scrollable Feature Cards */}
-        <div className="w-full overflow-x-auto scrollbar-hide">
-          <div className="flex gap-8 whitespace-nowrap w-max pr-4">
-            {[
-              { img: "qr.png", label: "QR tagging" },
-              { img: "site.png", label: "Site/location mapping" },
-              { img: "inventory.png", label: "Centralized inventory" },
-              { img: "role.png", label: "Role-based access" },
-              { img: "ui.png", label: "Intuitive UI" },
-              { img: "account.png", label: "Team accountability" },
-              { img: "return.png", label: "Return/ transfer items" },
-              { img: "dash.png", label: "Usage analytics dashboard" },
-              { img: "business.png", label: "Efficient business" },
-            ].map((item, index) => (
+        <div
+          ref={scrollRef}
+          className="w-screen overflow-x-hidden scrollbar-hide whitespace-nowrap"
+        >
+          <div className="flex gap-8 w-max pl-4 pr-0">
+            {[...items, ...items].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center flex-shrink-0 w-[320px] sm:w-[320px]"
+                className="flex flex-col items-center flex-shrink-0 w-[320px]"
               >
                 <img
                   src={`/images/construction/${item.img}`}
                   alt={item.label}
-                  className="w-[350px] h-[350px] object-contain mb-4"
+                  className="w-[350px] h-[350px] object-contain mb-2 mx-auto"
                 />
-                <p className="text-lg font-semibold text-center text-gray-800">
+                <p className="text-xl font-semibold text-center text-gray-800">
                   {item.label}
                 </p>
               </div>
@@ -211,13 +245,13 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* Button */}
         <div className="flex justify-center items-center pt-20">
           <a
             href="/get-started"
-            className="inline-block w-[160px] h-[60px] bg-no-repeat bg-center bg-contain text-center text-black text-base font-semibold leading-[60px]"
+            className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
             style={{
-              backgroundImage: "url('/images/Actions.png')", // Make sure this path is correct
+              backgroundImage: "url('/images/Actions.png')",
             }}
           >
             Let's get started
@@ -320,4 +354,4 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
   );
 };
 
-export default HouseholdPage;
+export default ConstructionPage;
