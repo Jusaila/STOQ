@@ -93,7 +93,7 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
               WebkitBackdropFilter: "blur(20px)",
             }}
           >
-            Construction
+            CONSTRUCTION
           </div>
 
           <div
@@ -119,7 +119,7 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
             className="absolute text-[#6E8A28] text-4xl font-bold font-rubik"
             style={{ bottom: "250px", left: "1160px" }}
           >
-            SEE. DO. ENJOY.
+            SEE. DO. GROW.
           </div>
         </div>
       </div>
@@ -170,61 +170,61 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
       </section>
 
       <section className="bg-white flex flex-col items-center px-6 md:px-28 py-20 font-rubik overflow-hidden">
-  <div className="w-full max-w-8xl">
-    {/* Header */}
-    <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
-      No delays. No guesswork. Just smarter decisions.
-    </h1>
+      <div className="w-full max-w-8xl">
+        {/* Header */}
+        <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
+          No delays. No guesswork. Just smarter decisions.
+        </h1>
 
-    <p className="text-gray-600 text-lg mb-16 max-w-3xl text-left">
-      Track every material in real time. Act fast—give, move, use, flag, or restock the moment it’s needed—so your construction business grows with confident efficiency.
-    </p>
+        <p className="text-gray-600 text-lg mb-16 max-w-3xl text-left">
+          Track every material in real time. Act fast—give, move, use, flag, or restock the moment it’s needed—so your construction business grows with confident efficiency.
+        </p>
 
-    {/* Scrollable Feature Cards */}
-    <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex gap-8 whitespace-nowrap w-max pr-4">
-        {[
-          { img: "qr.png", label: "QR tagging" },
-          { img: "site.png", label: "Site/location mapping" },
-          { img: "inventory.png", label: "Centralized inventory" },
-          { img: "role.png", label: "Role-based access" },
-          { img: "ui.png", label: "Intuitive UI" },
-          { img: "account.png", label: "Team accountability" },
-          { img: "return.png", label: "Return/ transfer items" },
-          { img: "dash.png", label: "Usage analytics dashboard" },
-          { img: "business.png", label: "Efficient business" },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center flex-shrink-0 w-[320px] sm:w-[320px]"
-          >
-            <img
-              src={`/images/construction/${item.img}`}
-              alt={item.label}
-              className="w-[350px] h-[350px] object-contain mb-4"
-            />
-            <p className="text-lg font-semibold text-center text-gray-800">
-              {item.label}
-            </p>
+        {/* Scrollable Feature Cards */}
+        <div className="w-full overflow-x-auto scrollbar-hide">
+          <div className="flex gap-8 whitespace-nowrap w-max pr-4">
+            {[
+              { img: "qr.png", label: "QR tagging" },
+              { img: "site.png", label: "Site/location mapping" },
+              { img: "inventory.png", label: "Centralized inventory" },
+              { img: "role.png", label: "Role-based access" },
+              { img: "ui.png", label: "Intuitive UI" },
+              { img: "account.png", label: "Team accountability" },
+              { img: "return.png", label: "Return/ transfer items" },
+              { img: "dash.png", label: "Usage analytics dashboard" },
+              { img: "business.png", label: "Efficient business" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center flex-shrink-0 w-[320px] sm:w-[320px]"
+              >
+                <img
+                  src={`/images/construction/${item.img}`}
+                  alt={item.label}
+                  className="w-[350px] h-[350px] object-contain mb-4"
+                />
+                <p className="text-lg font-semibold text-center text-gray-800">
+                  {item.label}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
 
-    {/* CTA Button */}
-    <div className="flex justify-center items-center pt-20">
-      <a
-        href="/get-started"
-        className="inline-block w-[160px] h-[60px] bg-no-repeat bg-center bg-contain text-center text-black text-base font-semibold leading-[60px]"
-        style={{
-          backgroundImage: "url('/images/Actions.png')", // Make sure this path is correct
-        }}
-      >
-        Let's get started
-      </a>
-    </div>
-  </div>
-</section>
+        {/* CTA Button */}
+        <div className="flex justify-center items-center pt-20">
+          <a
+            href="/get-started"
+            className="inline-block w-[160px] h-[60px] bg-no-repeat bg-center bg-contain text-center text-black text-base font-semibold leading-[60px]"
+            style={{
+              backgroundImage: "url('/images/Actions.png')", // Make sure this path is correct
+            }}
+          >
+            Let's get started
+          </a>
+        </div>
+      </div>
+    </section>
 
 
 
