@@ -169,7 +169,7 @@ export default function HeroSection() {
             <img
               src="/images/blur-bg.png"
               alt=""
-              className="absolute w-full h-full pointer-events-none"
+              className="absolute w-full h-full pointer-events-none border-3"
             />
             <div className="absolute inset-0 flex items-center px-3 gap-1 z-10">
               <img
