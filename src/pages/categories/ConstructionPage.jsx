@@ -211,54 +211,56 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
         </div>
       </section>
 
-      <section className="bg-white flex flex-col items-center justify-center px-28 font-rubik py-20">
-      <div className="max-w-8xl w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
-          Home runs better with <span className="text-[#181D27]">STOQ</span>.
-        </h1>
+      <section className="bg-white flex flex-col items-center px-28 py-20 font-rubik overflow-hidden">
+  <div className="w-full max-w-8xl">
+    {/* Header */}
+    <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
+      No delays. No guesswork. Just smarter decisions.
+    </h1>
 
-        <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
-          See what's on hand, act together, and evolve into everyday peace of mind.
-        </p>
+    <p className="text-gray-600 text-lg mb-16 max-w-3xl text-left">
+      Track every material in real time. Act fast—give, move, use, flag, or restock the moment it’s needed—so your construction business grows with confident efficiency.
+    </p>
 
-        {/* Scrollable Feature Cards */}
-        <div
-          ref={scrollRef}
-          className="w-screen overflow-x-hidden scrollbar-hide whitespace-nowrap"
-        >
-          <div className="flex gap-8 w-max pl-4 pr-0">
-            {[...items, ...items].map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center flex-shrink-0 w-[320px]"
-              >
-                <img
-                  src={`/images/construction/${item.img}`}
-                  alt={item.label}
-                  className="w-[350px] h-[350px] object-contain mb-2 mx-auto"
-                />
-                <p className="text-xl font-semibold text-center text-gray-800">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Button */}
-        <div className="flex justify-center items-center pt-20">
-          <a
-            href="/get-started"
-            className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
-            style={{
-              backgroundImage: "url('/images/Actions.png')",
-            }}
+    {/* Auto-scrolling Feature Cards */}
+    <div
+      ref={scrollRef}
+      className="w-screen overflow-x-hidden scrollbar-hide whitespace-nowrap"
+    >
+      <div className="flex gap-8 w-max pl-4">
+        {[...items, ...items].map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center flex-shrink-0 w-[320px]"
           >
-            Let's get started
-          </a>
-        </div>
+            <img
+              src={`/images/construction/${item.img}`}
+              alt={item.label}
+              className="w-[350px] h-[350px] object-contain mb-4"
+            />
+            <p className="text-lg font-semibold text-center text-gray-800">
+              {item.label}
+            </p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+
+    {/* CTA Button */}
+    <div className="flex justify-center items-center pt-20">
+      <a
+        href="/get-started"
+        className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
+        style={{
+          backgroundImage: "url('/images/Actions.png')",
+        }}
+      >
+        Let's get started
+      </a>
+    </div>
+  </div>
+</section>
+
 
 
 
