@@ -81,7 +81,7 @@ const PersonalPricingPlans = () => {
             </div>
         
             {/* Button */}
-            <button className="w-full bg-[#A9CF45] hover:bg-[#8BB833] text-black font-semibold py-3 rounded-full mb-6 border border-[#96b34d] shadow-sm">
+            <button className="w-full bg-[#A9CF45] hover:bg-[#8BB833] text-black font-semibold py-3 rounded-full mb-6 border-2 border-[#96b34d] shadow-sm">
             Get started
             </button>
         
