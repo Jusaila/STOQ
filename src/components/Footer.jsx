@@ -8,90 +8,87 @@ const Footer = () => {
       <hr className="border-t-2 border-gray-100 mx-20 mb-16" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-left">
+        
         {/* Use Cases Column 1 */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-xl">Use Cases</h4>
+          <h4 className="font-bold text-black mb-3 text-lg">Use Cases</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
-            <li><a href="#construction">Construction</a></li>
-            <li><a href="#Workshops">Workshops</a></li>
-            <li><a href="#Farmers">Farmers</a></li>
-            <li><a href="#Restaurant">Food & Cook</a></li>
-            <li><a href="Households">Households</a></li>
-          </ul>
+          <li><a href="#construction" className="hover:text-[#44551B]">Construction</a></li>
+          <li><a href="#Workshops" className="hover:text-[#44551B]">Workshops</a></li>
+          <li><a href="#Farmers" className="hover:text-[#44551B]">Farmers</a></li>
+          <li><a href="#Restaurant" className="hover:text-[#44551B]">Food & Cook</a></li>
+          <li><a href="Households" className="hover:text-[#44551B]">Households</a></li>
+        </ul>    
+
         </div>
 
         {/* Use Cases Column 2 */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-xl">Use Cases</h4>
+          <h4 className="font-bold text-black mb-3 text-lg">Use Cases</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
-            <li><a href="#Hobbyists">Hobby / Collections</a></li>
-            <li><a href="#Kids">Kids</a></li>
-            <li><a href="#Freelancers">Freelancers</a></li>
-            <li><a href="#Wellness">Wellness / Beauty</a></li>
-            <li><a href="#ervices">Home Services</a></li>
+            <li><a href="#Hobbyists" className="hover:text-[#44551B]" >Hobby / Collections</a></li>
+            <li><a href="#Kids" className="hover:text-[#44551B]">Kids</a></li>
+            <li><a href="#Freelancers" className="hover:text-[#44551B]">Freelancers</a></li>
+            <li><a href="#Wellness" className="hover:text-[#44551B]">Wellness / Beauty</a></li>
+            <li><a href="#ervices" className="hover:text-[#44551B]">Home Services</a></li>
           </ul>
         </div>
 
         {/* Company */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-xl">Company</h4>
+          <h4 className="font-bold text-black mb-3 text-lg">Company</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">About us</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Pricing</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Contact</a></li>
           </ul>
         </div>
 
         {/* Resources */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-xl">Resources</h4>
+          <h4 className="font-bold text-black mb-3 text-lg">Resources</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
-            <li><a href="#">STOQ FAQs</a></li>
-            <li><a href="#">Help center</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">STOQ FAQs</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Help center</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Tutorials</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Support</a></li>
           </ul>
         </div>
 
         {/* Legal */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-xl">Legal</h4>
+          <h4 className="font-bold text-black mb-3 text-lg">Legal</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">Licenses</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Terms</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Privacy</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Cookies</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Licenses</a></li>
+            <li><a href="#" className="hover:text-[#44551B]">Settings</a></li>
           </ul>
         </div>
 
         {/* Get the app */}
-        <div className="left-[155px] flex flex-col gap-4 z-20 text-xl">
+        <div className="left-[155px] flex flex-col gap-4 z-20 text-lg">
           <h3 className="text-black font-bold">Get the app</h3>
 
           {/* App Store */}
-          <a
-            href="#"
-            className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
-          >
-            <img src="/images/apple-logo.png" alt="Apple" className="w-7 h-7 mr-3" />
-            <div className="text-left text-sm leading-tight">
-              <p className="text-white text-[11px]">Download on the</p>
-              <p className="font-semibold text-white">App Store</p>
-            </div>
-          </a>
+          <a href="#" className="inline-block">
+         <img
+            src="/images/footer-app store badge.svg"
+            alt="Get it on Google Play"
+            className="w-[180px] h-auto"
+          />
+        </a> 
+         
+         {/* Google Play */}
+         <a href="#" className="inline-block">
+         <img
+            src="/images/footer-play store badge.svg"
+            alt="Get it on Google Play"
+            className="w-[180px] h-auto"
+          />
+        </a>              
 
-          {/* Google Play */}
-          <a
-            href="#"
-            className="flex items-center border border-gray-300 rounded-md px-4 py-2 bg-[#44551B] hover:shadow-lg transition"
-          >
-            <img src="/icons/Google_Play_Arrow_logo.svg" alt="Google Play" className="w-6 h-5 mr-3" />
-            <div className="text-left text-sm leading-tight">
-              <p className="text-xs text-white">GET IT ON</p>
-              <p className="font-semibold text-white">Google Play</p>
-            </div>
-          </a>
         </div>
       </div>
 
@@ -100,7 +97,7 @@ const Footer = () => {
 
       {/* Bottom Row */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-0 pb-10 text-sm">
-        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-10 mb-4 md:mb-0" />
+        <img src="/images/logo-small.svg" alt="STOQ Logo" className="h-10 mb-4 md:mb-0" />
         <p className="text-[#6B7280]">&copy; 2025 STOQ. All rights reserved.</p>
       </div>
     </footer>

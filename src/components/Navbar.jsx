@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="w-full max-w-screen-2xl flex items-center justify-between bg-white/30 backdrop-blur-md border border-gray-300 shadow-md rounded-xl px-6 py-3">
 
         {/* Left Logo */}
-        <img src="/images/Button Stoq.png" alt="STOQ Logo" className="h-7"/>
+        <img src="/images/logo-small.svg" alt="STOQ Logo" className="h-7"/>
 
         {/* Middle Nav Items - Desktop */}
         <div className="hidden md:flex space-x-24 text-md font-normal text-[#414651] relative">
@@ -136,12 +136,16 @@ const Navbar = () => {
             Log in
           </a>
           <a
-          href="#"
-          className="inline-block rounded-full px-3 py-1.5 bg-gradient-to-b from-[#A9CF45] to-[#A9CF45] shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_4px_6px_rgba(0,0,0,0.1)]
-           border-[1px] border-[#6E8A28] text-[#1A1A1A] text-[15px] font-md text-center font-rubik"
-        >
-          Sign up
-        </a>
+  href="#"
+  className="inline-block rounded-full px-3 py-1.5 
+             bg-gradient-to-b from-[#A9CF45] to-[#A9CF45] 
+             shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_4px_6px_rgba(0,0,0,0.1)]
+             border-[1px] border-[#6E8A28] text-[#1A1A1A] text-[15px] font-medium text-center font-rubik
+             hover:from-[#8CB031] hover:to-[#8CB031] transition-colors duration-300"
+>
+  Sign up
+</a>
+
 
         </div>
 

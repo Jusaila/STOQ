@@ -99,7 +99,10 @@ const HouseholdPage = () => {
   </div>
 
   {/* Content */}
-  <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] min-h-screen">
+  {/* <div className="relative z-10 flex flex-col justify-start items-center h-full text-[#A9CF45] min-h-screen pt-12 md:pt--2"> */}
+  <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] min-h-screen -mt-12 md:-mt-120">
+
+  {/* <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] min-h-screen"> */}
       <div className="relative w-full max-w-[90vw] h-full flex flex-col items-center justify-center mx-auto">
         
         {/* Container for logo and text elements - all positioned relative to each other */}
@@ -150,7 +153,7 @@ const HouseholdPage = () => {
               style={{
                 width: "26%",
                 aspectRatio: "1/1",
-                top: "46%",
+                top: "45%",
                 left: "57.2%",
                 transform: "translate(-50%, -50%)",
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
@@ -210,11 +213,11 @@ const HouseholdPage = () => {
           className="relative w-[150px] h-[45px] sm:w-[180px] sm:h-[55px] lg:w-[200px] lg:h-[60px] inline-block"
         >
           <img
-            src="/images/Mobile app store badge.png"
+            src="/images/app store badge.svg"
             alt="App Store"
             className="absolute w-full h-full pointer-events-none"
           />
-          <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
+          {/* <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 814 1000"
@@ -231,7 +234,7 @@ const HouseholdPage = () => {
                 App Store
               </p>
             </div>
-          </div>
+          </div> */}
         </a>
 
         {/* Google Play */}
@@ -240,11 +243,11 @@ const HouseholdPage = () => {
           className="relative w-[150px] h-[45px] sm:w-[180px] sm:h-[55px] lg:w-[200px] lg:h-[60px] inline-block"
         >
           <img
-            src="/images/Mobile app store badge.png"
+            src="/images/play store badge.svg"
             alt="Google Play"
             className="absolute w-full h-full"
           />
-          <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
+          {/* <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
             <img
               src="/icons/Google_Play_Arrow_logo.svg"
               alt="Google Play"
@@ -256,7 +259,7 @@ const HouseholdPage = () => {
                 Google Play
               </p>
             </div>
-          </div>
+          </div> */}
         </a>
       </div>
 
@@ -367,10 +370,10 @@ const HouseholdPage = () => {
     <TestimonialSection />
     <PersonalPricingPlans />
      {/* CTA Button */}
-    <div className="flex justify-center mt-0 pt-0 -translate-y-2">
+    <div className="flex justify-center mt-0 pt-0 -translate-y-2 font-rubik">
       <a 
         href="/pricing" 
-        className="text-[#8CB031] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline"
+        className="text-[#8CB031] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline font-rubik"
       >
         See all plans
       </a>
@@ -387,14 +390,14 @@ const HouseholdPage = () => {
       
       <div className="flex gap-4 items-center">
   {/* Watch Demo */}
-  <button className="w-[150px] h-[55px] border-[2px] border-gray-200 text-[#414651] text-lg font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
+  <button className="w-[150px] h-[55px] border-[2px] border-gray-200 text-[#1C230C] text-lg font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
     Watch Demo
   </button>
 
   {/* Get Started */}
   <a
     href="/get-started"
-    className="w-[150px] h-[55px] bg-no-repeat bg-center bg-contain text-[#414651] text-lg font-semibold flex items-center justify-center rounded-full"
+    className="w-[150px] h-[55px] bg-no-repeat bg-center bg-contain text-[#1C230C] text-lg font-semibold flex items-center justify-center rounded-full"
     style={{
       backgroundImage: "url('/images/Button-Get.png')",
     }}

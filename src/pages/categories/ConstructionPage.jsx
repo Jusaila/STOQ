@@ -84,131 +84,184 @@ import ProffessionalPricingPlans from "../../components/ProffessionalPricingPlan
   return (
     <div className="overflow-x-hidden">
       <section className="relative h-screen overflow-hidden font-rubik">
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute w-full h-full object-cover z-0 blur-sm"
-      >
-        <source src="/videos/WhatsApp Video.mp4" type="video/mp4" />
-      </video>
+  {/* Background Video */}
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute w-full h-full object-cover z-0 blur-sm"
+  >
+    <source src="/videos/WhatsApp Video.mp4" type="video/mp4" />
+  </video>
 
-      {/* Navbar */}
-      <Navbar />
+  {/* Navbar - Fixed */}
+  <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <Navbar />
+  </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] pt-10">
-        <div className="relative w-full max-w-[1600px] h-full flex flex-col items-center justify-center">
-          {/* LEFT TOP TEXT */}
-          <div className="absolute top-[120px] left-[150px] text-left">
-            <h2 className="text-[#6E8A28] text-[50px] font-bold">CONSTRUCTION <span className="text-[#6E8A28]">Inventory Management.</span></h2>
-            <p className="text-[#63645c] text-xl mt-1 font-semibold">See your material resources. Do what's necessary. Grow with no stress and full control.</p>
+  {/* Content */}
+  <div className="relative z-10 flex flex-col justify-center items-center h-full text-[#A9CF45] min-h-screen">
+      <div className="relative w-full max-w-[90vw] h-full flex flex-col items-center justify-center mx-auto">
+        
+        {/* Container for logo and text elements - all positioned relative to each other */}
+        <div className="relative flex flex-col items-center justify-center">
+          
+          {/* LEFT TOP TEXT - responsive positioning */}
+          <div className="w-full flex justify-start mb-8 lg:mb-12 pl-4 sm:pl-8 md:ml-[-20%] lg:ml-[-35%] xl:ml-[-45%]">
+            <div className="text-left">
+              <h2 className="
+                text-[#6E8A28] 
+                font-bold 
+                leading-tight 
+                text-2xl       /* mobile */
+                sm:text-3xl    /* small screens */
+                md:text-4xl    /* tablets */
+                lg:text-5xl    /* laptops */
+                xl:text-5xl    /* desktop */
+              ">
+                HOME <span className="text-[#62635b]">Supply Harmony.</span>
+              </h2>
+
+              <p className="
+                text-[#63645c] 
+                mt-2 
+                font-semibold 
+                text-sm        /* mobile */
+                sm:text-base   /* small screens */
+                md:text-lg     /* tablets */
+                lg:text-xl     /* laptops */
+                xl:text-2xl    /* desktop */
+              ">
+                See supplies. Act together. Enjoy calm.
+              </p>
+            </div>
           </div>
 
-          {/* STOQ LOGO */}
-          <img
-            src="/images/STOQ Logo Final.png"
-            alt="STOQ Logo"
-            className="w-[900px] h-[900px] object-contain"
-            style={{ transform: "translate(-70px, -1px)"
-               
-             }} // moved slightly up
-          />
-
-          {/* HOUSEHOLDS Bubble on the 'O' */}
-          <div
-            className="absolute w-[235px] h-[220px] rounded-full text-[23px] font-bold text-black flex items-center justify-center z-20"
-            style={{
-              top: "47.5%",
-              left: "49.6%",
-              transform: "translate(-50%, -50%)",
-              background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
-              border: "1px solid rgba(255, 255, 255, 0.4)",
-              boxShadow: `
-                inset 0 0 10px rgba(255, 255, 255, 0.3),
-                inset 0 2px 4px rgba(255, 255, 255, 0.2),
-                0 4px 8px rgba(0, 0, 0, 0.05)
-              `,
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-            }}
-          >
-            CONSTRUCTION
-          </div>
-
-          <div
-            ref={tryRef}
-            className="absolute w-[280px] h-[280px] rounded-full overflow-hidden flex items-center justify-center z-20 cursor-pointer"
-            style={{
-                top: "49.2%",
-                left: "64.7%",
-                transform: "translate(-50%, -50%)",
-            }}
-            onClick={() => alert("Navigating to TRY logic...")}
-            >
+          {/* STOQ LOGO + Overlays */}
+          <div className="relative w-[80vw] max-w-[800px]">
             <img
+              src="/images/STOQ Logo Final.png"
+              alt="STOQ Logo"
+              className="w-full h-auto object-contain"
+            />
+
+            {/* HOUSEHOLDS Bubble on O */}
+            <div
+              className="absolute rounded-full font-bold text-black flex items-center justify-center text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl"
+              style={{
+                width: "26%",
+                aspectRatio: "1/1",
+                top: "45%",
+                left: "57.2%",
+                transform: "translate(-50%, -50%)",
+                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
+                border: "1px solid rgba(255, 255, 255, 0.4)",
+                boxShadow: `
+                  inset 0 0 10px rgba(255, 255, 255, 0.3),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.2),
+                  0 4px 8px rgba(0, 0, 0, 0.05)
+                `,
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+              }}
+            >
+              HOUSEHOLDS
+            </div>
+
+            {/* TRY Bubble on Q */}
+            <div
+              ref={tryRef}
+              className="absolute aspect-square rounded-full overflow-hidden flex items-center justify-center cursor-pointer"
+              style={{
+                width: "25%",
+                top: "45%",
+                left: "84%",
+                transform: "translate(-50%, -50%)",
+              }}
+              onClick={() => alert("Navigating to TRY logic...")}
+            >
+              <img
                 src="/images/Button Shpehere Black.png"
                 alt="TRY"
-                className="w-16 h-16 object-contain mb-2"
-            />
+                className="w-[40%] h-auto object-contain"
+              />
             </div>
-
-
-          {/* SEE.DO.ENJOY Slogan */}
-          <div
-            className="absolute text-[#6E8A28] text-4xl font-bold font-rubik"
-            style={{ bottom: "250px", left: "1160px" }}
-          >
-            SEE. DO. GROW.
           </div>
+
+          {/* SEE.DO.ENJOY Slogan - responsive positioning */}
+          <div className="w-full flex justify-end mt-8 lg:mt-1 pr-4 sm:pr-8">
+            <div 
+              className="text-[#6E8A28] font-bold font-rubik 
+                text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
+                md:mr-[-10%] lg:mr-[-20%] xl:mr-[-37%]" 
+            >
+              SEE. DO. ENJOY.
+            </div>
+          </div>
+          
         </div>
       </div>
-
-      <div className="absolute bottom-10 left-[155px] flex gap-4 z-20">
-          <a href="#" className="relative w-[200px] h-[60px] inline-block">
-            <img
-              src="/images/blur-bg.png"
-              alt=""
-              className="absolute w-full h-full pointer-events-none"
-            />
-            <div className="absolute inset-0 flex items-center px-3 gap-3 z-10">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 814 1000"
-                className="w-10 h-10"
-                fill="#44551B"
-              >
-               <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z" />
-
-              </svg>
-              <div className="flex flex-col leading-tight">
-                <p className="text-[12px] text-[#44551B] font-rubik">Download on the</p>
-                <p className="text-[21px] font-bold text-[#44551B] font-rubik">App Store</p>
-              </div>
+    </div>
+  {/* App Store & Play Store buttons */}
+  {/* Store Buttons */}
+  <div className="absolute bottom-6 left-[15%] sm:left-[5%] md:left-[10%] lg:left-[8%] flex flex-col sm:flex-row gap-3 sm:gap-4 z-20">
+  {/* App Store */}
+        <a
+          href="#"
+          className="relative w-[150px] h-[45px] sm:w-[180px] sm:h-[55px] lg:w-[200px] lg:h-[60px] inline-block"
+        >
+          <img
+            src="/images/Mobile app store badge.png"
+            alt="App Store"
+            className="absolute w-full h-full pointer-events-none"
+          />
+          <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 814 1000"
+              className="w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10"
+              fill="#44551B"
+            >
+              <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z" />
+            </svg>
+            <div className="flex flex-col leading-tight">
+              <p className="text-[10px] sm:text-[12px] text-[#44551B] font-rubik">
+                Download on the
+              </p>
+              <p className="text-[16px] sm:text-[20px] lg:text-[21px] font-bold text-[#44551B] font-rubik">
+                App Store
+              </p>
             </div>
-          </a>
+          </div>
+        </a>
 
-          <a href="#" className="relative w-[200px] h-[60px] inline-block">
+        {/* Google Play */}
+        <a
+          href="#"
+          className="relative w-[150px] h-[45px] sm:w-[180px] sm:h-[55px] lg:w-[200px] lg:h-[60px] inline-block"
+        >
+          <img
+            src="/images/Mobile app store badge.png"
+            alt="Google Play"
+            className="absolute w-full h-full"
+          />
+          <div className="absolute inset-0 flex items-center px-2 sm:px-3 gap-2 sm:gap-3 z-10">
             <img
-              src="/images/blur-bg.png"
-              alt=""
-              className="absolute w-full h-full pointer-events-none"
+              src="/icons/Google_Play_Arrow_logo.svg"
+              alt="Google Play"
+              className="w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9"
             />
-            <div className="absolute inset-0 flex items-center px-3 gap-1 z-10">
-              <img
-                src="/icons/Google_Play_Arrow_logo.svg"
-                alt="Google Play"
-                className="w-8 h-8 mr-3"
-              />
-              <div className="text-left text-sm leading-tight">
-                <p className="text-[#44551B] text-[12px]">GET IT ON</p>
-                <p className="font-semibold text-[#44551B] text-[21px]">Google Play</p>
-              </div>
+            <div className="text-left leading-tight">
+              <p className="text-[#44551B] text-[10px] sm:text-[12px]">GET IT ON</p>
+              <p className="font-semibold text-[#44551B] text-[16px] sm:text-[20px] lg:text-[19px]">
+                Google Play
+              </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </div>
+
       </section>
 
       <section className="bg-white flex flex-col items-center px-28 py-20 font-rubik overflow-hidden">
