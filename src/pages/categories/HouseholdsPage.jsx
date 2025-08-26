@@ -267,8 +267,8 @@ const HouseholdPage = () => {
 
 
 
-      <section className="bg-white flex flex-col items-center justify-center px-28 font-rubik py-20 overflow-hidden">
-  <div className="max-w-8xl w-full">
+      <section className="bg-white flex flex-col items-center justify-center font-rubik py-20 overflow-hidden">
+  <div className="max-w-8xl w-full px-28">
     <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
       Home runs better with <span className="text-[#181D27]">STOQ</span>.
     </h1>
@@ -276,42 +276,43 @@ const HouseholdPage = () => {
     <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
       See what's on hand, act together, and evolve into everyday peace of mind.
     </p>
+  </div>
 
-    {/* Scrollable Feature Cards */}
-    <div
-      ref={scrollRef}
-      className="w-screen overflow-x-hidden scrollbar-hide whitespace-nowrap"
+  {/* Scrollable Feature Cards - full width edge to edge */}
+  <div
+    ref={scrollRef}
+    className="w-screen overflow-x-hidden scrollbar-hide whitespace-nowrap"
+  >
+    <div className="flex gap-8 w-max">
+      {[...items, ...items].map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center flex-shrink-0 w-[350px]"
+        >
+          <img
+            src={`/images/household/${item.img}`}
+            alt={item.label}
+            className="w-[350px] h-[350px] object-contain mb-4"
+          />
+          <p className="text-lg font-semibold text-center text-gray-800">
+            {item.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Button */}
+  <div className="flex justify-center items-center pt-20">
+    <a
+      href="/get-started"
+      className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
+      style={{
+        backgroundImage: "url('/images/Actions.png')",
+      }}
     >
-      <div className="flex gap-8 w-max pl-4">
-        {[...items, ...items].map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center flex-shrink-0 w-[320px]"
-          >
-            <img
-              src={`/images/household/${item.img}`}
-              alt={item.label}
-              className="w-[350px] h-[350px] object-contain mb-4"
-            />
-            <p className="text-lg font-semibold text-center text-gray-800">
-              {item.label}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-    {/* Button */}
-    <div className="flex justify-center items-center pt-20">
-      <a
-        href="/get-started"
-        className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
-        style={{
-          backgroundImage: "url('/images/Actions.png')",
-        }}
-      >
-        Let's get started
-      </a>
-    </div>
+      Let's get started
+    </a>
   </div>
 </section>
 
