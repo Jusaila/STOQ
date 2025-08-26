@@ -88,9 +88,9 @@ const HouseholdPage = () => {
     muted
     loop
     playsInline
-    className="absolute w-full h-full object-cover z-0 blur-sm"
+    className="absolute w-full h-full object-cover z-0 blur-[6px]"
   >
-    <source src="/videos/WhatsApp Video.mp4" type="video/mp4" />
+    <source src="/videos/backgound new.mp4" type="video/mp4" />
   </video>
 
   {/* Navbar - Fixed */}
