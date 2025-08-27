@@ -11,7 +11,7 @@ const Footer = () => {
         
         {/* Use Cases Column 1 */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-lg">Use Cases</h4>
+          <h4 className="font-bold text-[#181D27] mb-3 text-sm">Use Cases</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
           <li><a href="#construction" className="hover:text-[#44551B]">Construction</a></li>
           <li><a href="#Workshops" className="hover:text-[#44551B]">Workshops</a></li>
@@ -24,7 +24,7 @@ const Footer = () => {
 
         {/* Use Cases Column 2 */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-lg">Use Cases</h4>
+          <h4 className="font-bold text-[#181D27] mb-3 text-sm">Use Cases</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
             <li><a href="#Hobbyists" className="hover:text-[#44551B]" >Hobby / Collections</a></li>
             <li><a href="#Kids" className="hover:text-[#44551B]">Kids</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-lg">Company</h4>
+          <h4 className="font-bold text-[#181D27] mb-3 text-sm">Company</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
             <li><a href="#" className="hover:text-[#44551B]">About us</a></li>
             <li><a href="#" className="hover:text-[#44551B]">Pricing</a></li>
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Resources */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-lg">Resources</h4>
+          <h4 className="font-bold text-[#181D27] mb-3 text-sm">Resources</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
             <li><a href="#" className="hover:text-[#44551B]">STOQ FAQs</a></li>
             <li><a href="#" className="hover:text-[#44551B]">Help center</a></li>
@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* Legal */}
         <div>
-          <h4 className="font-bold text-black mb-3 text-lg">Legal</h4>
+          <h4 className="font-bold text-[#181D27] mb-3 text-sm">Legal</h4>
           <ul className="space-y-3 font-semibold text-[#7DA627]">
             <li><a href="#" className="hover:text-[#44551B]">Terms</a></li>
             <li><a href="#" className="hover:text-[#44551B]">Privacy</a></li>
@@ -68,8 +68,8 @@ const Footer = () => {
         </div>
 
         {/* Get the app */}
-        <div className="left-[155px] flex flex-col gap-4 z-20 text-lg">
-          <h3 className="text-black font-bold">Get the app</h3>
+        <div className="left-[155px] flex flex-col gap-4 z-20 text-sm">
+          <h3 className="text-[#181D27] font-bold">Get the app</h3>
 
           {/* App Store */}
           <a href="#" className="inline-block">

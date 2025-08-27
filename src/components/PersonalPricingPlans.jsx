@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
+import Button from "../components/Button";
 
 
 const personallplans = [
@@ -80,11 +81,15 @@ const PersonalPricingPlans = () => {
             <p className="text-sm text-gray-600 mt-2">{plan.subtitle}</p>
             </div>
         
-            {/* Button */}
-            <button className="w-full bg-[#A9CF45] hover:bg-[#8BB833] text-black font-semibold py-3 rounded-full mb-6 border-2 border-[#96b34d] shadow-sm">
-            Get started
-            </button>
-        
+           {/* Button inside pricing card (md size) */}
+           {/* <div className="flex justify-center mb-6">
+            <Button size="xl" variant="primary">
+              Get started
+            </Button>
+          </div> */}
+           {/* Button */}
+           <Button size="xl" variant="primary" className="w-[528px] mb-6">Get started</Button>
+
             {/* Divider */}
             <div className="border-b border-gray-200 mb-4" />
         

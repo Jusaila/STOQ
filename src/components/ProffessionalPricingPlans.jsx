@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-
+import Button from "../components/Button";
 const professionalplans = [
   {
     title: "Standard Pro",
@@ -85,9 +85,7 @@ const ProffessionalPricingPlans = () => {
             </div>
         
             {/* Button */}
-            <button className="w-full bg-[#A9CF45] hover:bg-[#8BB833] text-black font-semibold py-3 rounded-full mb-6">
-            Get started
-            </button>
+            <Button size="xl" variant="primary" className="w-[320px] mb-6">Get started</Button>
         
             {/* Divider */}
             <div className="border-b border-gray-200 mb-4" />

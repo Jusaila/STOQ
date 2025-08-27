@@ -6,7 +6,7 @@ import gsap from "gsap";
 import Footer from "../../components/Footer";
 import TestimonialSection from "../../components/TestimonialSection";
 import PersonalPricingPlans from "../../components/PersonalPricingPlans";
-
+import Button from "../../components/Button";
 
 const HouseholdPage = () => {
   const tryRef = useRef(null);
@@ -83,15 +83,20 @@ const HouseholdPage = () => {
     <div>
      <section className="relative h-screen overflow-hidden font-rubik">
   {/* Background Video */}
+<div className="absolute inset-0 z-0">
   <video
     autoPlay
     muted
     loop
     playsInline
-    className="absolute w-full h-full object-cover z-0 blur-[6px]"
+    className="w-full h-full object-cover"
   >
     <source src="/videos/backgound new.mp4" type="video/mp4" />
   </video>
+
+  {/* Overlay layer */}
+  <div className="absolute inset-0 bg-white/40 backdrop-blur-[10px]" />
+</div>
 
   {/* Navbar - Fixed */}
   <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
@@ -140,21 +145,24 @@ const HouseholdPage = () => {
           </div>
 
           {/* STOQ LOGO + Overlays */}
-          <div className="relative w-[80vw] max-w-[800px]">
-            <img
-              src="/images/STOQ Logo Final.png"
-              alt="STOQ Logo"
-              className="w-full h-auto object-contain"
-            />
+
+      <div className="relative w-[80vw] max-w-[800px]">
+        <img
+          src="/images/STOQ Logo Final.png"
+          alt="STOQ Logo"
+          className="w-full h-auto object-contain translate-x-[-7%]" 
+        />
+
+
 
             {/* HOUSEHOLDS Bubble on O */}
             <div
-              className="absolute rounded-full font-bold text-black flex items-center justify-center text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl"
+              className="absolute rounded-full font-bold text-[#1C230C] flex items-center justify-center text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl"
               style={{
                 width: "26%",
                 aspectRatio: "1/1",
                 top: "45%",
-                left: "57.2%",
+                left: "50%",
                 transform: "translate(-50%, -50%)",
                 background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
                 border: "1px solid rgba(255, 255, 255, 0.4)",
@@ -177,7 +185,7 @@ const HouseholdPage = () => {
               style={{
                 width: "25%",
                 top: "45%",
-                left: "84%",
+                left: "76.9%",
                 transform: "translate(-50%, -50%)",
               }}
               onClick={() => alert("Navigating to TRY logic...")}
@@ -193,7 +201,7 @@ const HouseholdPage = () => {
           {/* SEE.DO.ENJOY Slogan - responsive positioning */}
           <div className="w-full flex justify-end mt-8 lg:mt-1 pr-4 sm:pr-8">
             <div 
-              className="text-[#6E8A28] font-bold font-rubik 
+              className="text-[#596F22] font-bold font-rubik 
                 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
                 md:mr-[-10%] lg:mr-[-20%] xl:mr-[-37%]" 
             >
@@ -391,20 +399,12 @@ const HouseholdPage = () => {
       
       <div className="flex gap-4 items-center">
   {/* Watch Demo */}
-  <button className="w-[150px] h-[55px] border-[2px] border-gray-200 text-[#1C230C] text-lg font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
+  <button className="w-[150px] h-[45px] border-[2px] border-gray-200 text-[#1C230C] text-base font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
     Watch Demo
   </button>
+  
 
-  {/* Get Started */}
-  <a
-    href="/get-started"
-    className="w-[150px] h-[55px] bg-no-repeat bg-center bg-contain text-[#1C230C] text-lg font-semibold flex items-center justify-center rounded-full"
-    style={{
-      backgroundImage: "url('/images/Button-Get.png')",
-    }}
-  >
-    Get started
-  </a>
+  <Button size="md">Get started</Button>
 </div>
 
 
