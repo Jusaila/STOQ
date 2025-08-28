@@ -7,9 +7,8 @@ const Button = ({
   fullWidth = false,
   className = '',
 }) => {
- 
-  const baseClasses = 'inline-flex items-center justify-center font-bold transition-colors duration-200 border-2 whitespace-nowrap';
-
+  const baseClasses =
+    'inline-flex items-center justify-center font-bold transition-colors duration-200 border-2 whitespace-nowrap shadow-sm';
 
   let sizeClasses = '';
   let textSize = '';
@@ -22,7 +21,7 @@ const Button = ({
       break;
     case 'md':
       sizeClasses = 'py-[10px] px-[14px] rounded-full';
-      textSize = 'text-sm';
+      textSize = 'text-[14px]';
       lineHeight = 'leading-[20px]';
       break;
     case 'xl':
@@ -37,18 +36,15 @@ const Button = ({
   }
 
   let variantClasses = '';
-  let style = {};
   if (variant === 'primary') {
-    variantClasses = 'text-gray-900 border-transparent';
-    style = {
-      background: 'linear-gradient(#A9CF45, #A9CF45) padding-box, linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0)) border-box',
-      border: '2px solid #8aa740',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // optional depth
-    };
-    
+    variantClasses = [
+      'text-gray-900 border-[#8aa740]',
+      '[background:linear-gradient(#A9CF45,#A9CF45)_padding-box,linear-gradient(to_bottom,rgba(255,255,255,0.12),rgba(255,255,255,0))_border-box]',
+      'hover:[background:linear-gradient(#8CB031,#8CB031)_padding-box,linear-gradient(to_bottom,rgba(255,255,255,0.12),rgba(255,255,255,0))_border-box]'
+    ].join(' ');
   } else if (variant === 'secondary') {
-    variantClasses = 'text-gray-900 bg-white border-[#D5D7DA] hover:bg-gray-50';
-    style = {}; // No shadows for secondary based on provided info
+    variantClasses =
+      'text-gray-900 bg-white border-[#D5D7DA] hover:bg-gray-50';
   }
 
   const widthClass = fullWidth ? 'w-full' : 'w-auto';
@@ -56,7 +52,6 @@ const Button = ({
   return (
     <button
       className={`${baseClasses} ${sizeClasses} ${variantClasses} ${textSize} ${lineHeight} ${widthClass} ${className}`}
-      style={style}
     >
       {children}
     </button>
