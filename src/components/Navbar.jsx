@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import "../index.css";
-
+import Button from "./Button";
 // Industry items with icons
 const industryItems = [
   { label: "Construction", icon: "/icons/Vector.png", link: "construction" },
@@ -49,7 +49,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Industries", items: industryItems.map(i => ({ label: i.label, link: i.link })) },
     { name: "Features", items: [], link: "#Features"},
-    { name: "Uses's Cases", items: [], link: "#Uses's Cases" },
+    { name: "User's Cases", items: [], link: "#Uses's Cases" },
     { name: "Pricing", items: [], link: "#Pricing" },
     { name: "About STOQ", items: [], link: "#About STOQ" },
   ];
@@ -67,7 +67,7 @@ const Navbar = () => {
             <div key={idx} className="relative">
               <button
                 onClick={() => toggleDropdown(menu.name)}
-                className="flex items-center gap-1 hover:text-black font-semibold"
+                className="flex items-center gap-1 text-[#414651] hover:text-black font-semibold"
               >
                 <a href={menu.link}>{menu.name}</a>
                 {menu.items.length > 0 && <ChevronDown size={14} />}
@@ -132,19 +132,74 @@ const Navbar = () => {
 
         {/* Right Auth Buttons - Desktop */}
         <div className="hidden md:flex items-center space-x-4 text-sm font-medium">
-          <a href="#" className="bg-white rounded-full px-3 text-[15px] py-1.5 text-gray-700 hover:text-black border border-gray-300 font-rubik">
+          {/* <a href="#" className="bg-white rounded-full px-3 text-[15px] py-1.5 text-[#414651] hover:text-black border border-gray-300 font-rubik">
             Log in
-          </a>
-          <a
+          </a> */}
+          {/* <a
+          href="#"
+          className="inline-block rounded-full px-3 py-1.5 
+                    bg-gradient-to-b from-[#A9CF45] to-[#A9CF45] 
+                    shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_4px_6px_rgba(0,0,0,0.1)]
+                    border-[1px] border-[#6E8A28] text-[#1C230C] text-[15px] font-medium text-center font-rubik
+                    hover:from-[#8CB031] hover:to-[#8CB031] transition-colors duration-300"
+        >
+          Sign up
+        </a> */}
+   
+         <a
   href="#"
-  className="inline-block rounded-full px-3 py-1.5 
-             bg-gradient-to-b from-[#A9CF45] to-[#A9CF45] 
-             shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_0_4px_6px_rgba(0,0,0,0.1)]
-             border-[1px] border-[#6E8A28] text-[#1A1A1A] text-[15px] font-medium text-center font-rubik
-             hover:from-[#8CB031] hover:to-[#8CB031] transition-colors duration-300"
+  style={{
+    display: "inline-block",
+    borderRadius: "9999px", // full rounded
+    padding: "10px 14px", // same as px-3 py-1.5
+    background: "bg-white",
+    border: "2px solid #D5D7DA",
+    // boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+    color: "#414651",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Rubik, sans-serif",
+    textAlign: "center",
+    textDecoration: "none",
+    transition: "background 0.3s ease"
+  }}
+  
+>
+  Log in
+</a>
+        <a
+  href="#"
+  style={{
+    display: "inline-block",
+    borderRadius: "9999px", // full rounded
+    padding: "10px 14px", // same as px-3 py-1.5
+    background: "linear-gradient(#A9CF45, #A9CF45) padding-box, linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0)) border-box",
+    border: "2px solid #8aa740",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+    color: "#1C230C",
+    fontSize: "14px",
+    fontWeight: 600,
+    fontFamily: "Rubik, sans-serif",
+    textAlign: "center",
+    textDecoration: "none",
+    transition: "background 0.3s ease"
+  }}
+  onMouseEnter={(e) =>
+    (e.currentTarget.style.background =
+      "linear-gradient(#8CB031, #8CB031) padding-box, linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0)) border-box")
+  }
+  onMouseLeave={(e) =>
+    (e.currentTarget.style.background =
+      "linear-gradient(#A9CF45, #A9CF45) padding-box, linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0)) border-box")
+  }
 >
   Sign up
 </a>
+       
+       {/* <Button size="md" variant="secondary" className="w-[74px] px-[14]">Login</Button> */}
+{/* <Button size="md" variant="primary" className="w-[84px]">Sign up</Button> */}
+
+
 
 
         </div>

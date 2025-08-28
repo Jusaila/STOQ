@@ -88,7 +88,7 @@ const PersonalPricingPlans = () => {
             </Button>
           </div> */}
            {/* Button */}
-           <Button size="xl" variant="primary" className="w-[528px] mb-6">Get started</Button>
+           <Button size="xl" variant="primary" className="w-[528px] mb-6 text-[#1C230C] font-semibold text-[16px]">Get started</Button>
 
             {/* Divider */}
             <div className="border-b border-gray-200 mb-4" />

@@ -312,7 +312,7 @@ const HouseholdPage = () => {
 
   {/* Button */}
   <div className="flex justify-center items-center pt-20">
-    <a
+    {/* <a
       href="/get-started"
       className="inline-block w-[200px] h-[80px] bg-no-repeat bg-center bg-contain text-center text-black text-lg font-semibold leading-[80px]"
       style={{
@@ -320,7 +320,9 @@ const HouseholdPage = () => {
       }}
     >
       Let's get started
-    </a>
+    </a> */}
+    <Button size="xl" variant="primary" className="w-[182px] mb-6 text-[#1C230C] font-semibold text-[16px]">Let's get started</Button>
+
   </div>
 </section>
 
@@ -399,12 +401,12 @@ const HouseholdPage = () => {
       
       <div className="flex gap-4 items-center">
   {/* Watch Demo */}
-  <button className="w-[150px] h-[45px] border-[2px] border-gray-200 text-[#1C230C] text-base font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
+  {/* <button className="w-[150px] h-[45px] border-[2px] border-gray-200 text-[#1C230C] text-base font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
     Watch Demo
   </button>
-  
-
-  <Button size="md">Get started</Button>
+   */}
+  <Button size="md" variant="secondary" className="text-[#414651] w-[117px] font-semibold text-[14px]">Watch Demo</Button>
+  <Button size="md" className="text-[#1C230C] w-[111px] font-semibold text-[14px]">Get started</Button>
 </div>
 
 
