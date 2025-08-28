@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const categories = [
   "FARMERS",
@@ -12,6 +12,11 @@ const categories = [
   "KIDS",
 ];
 
+const BASE_LOGO_WIDTH = 1000;
+const BASE_BUBBLE_SIZE = 260;
+const BASE_SPACING = 320;
+const BASE_SPEED = 4;
+
 const BubbleAnimation = ({
   onPositionChange,
   selectedCategory,
@@ -19,26 +24,57 @@ const BubbleAnimation = ({
   animationStopped,
   setAnimationStopped,
 }) => {
+  const rootRef = useRef(null);
+  const [containerRect, setContainerRect] = useState({ width: BASE_LOGO_WIDTH, height: 0 });
   const [yPosition, setYPosition] = useState(0);
-  const spacing = 320;
+
+  const scale = containerRect.width ? containerRect.width / BASE_LOGO_WIDTH : 1;
+
+  const bubbleSize = Math.max(24, Math.round(BASE_BUBBLE_SIZE * scale));
+  const spacing = BASE_SPACING * scale;
   const loopHeight = spacing * categories.length;
+  const speed = BASE_SPEED * scale;
 
   useEffect(() => {
-    if (animationStopped) return; // Don't animate when stopped
+    const el = rootRef.current;
+    if (!el) return;
+    const parent = el.parentElement || document.body;
+
+    const updateRect = () => {
+      const rect = parent.getBoundingClientRect();
+      setContainerRect({ width: rect.width, height: rect.height });
+    };
+
+    updateRect();
+    let ro;
+    try {
+      ro = new ResizeObserver(updateRect);
+      ro.observe(parent);
+    } catch (e) {
+      window.addEventListener("resize", updateRect);
+    }
+
+    return () => {
+      if (ro) ro.disconnect();
+      else window.removeEventListener("resize", updateRect);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (animationStopped) return;
     let frameId;
     const animate = () => {
-      setYPosition((prev) => (prev - 4 + loopHeight) % loopHeight);
+      setYPosition((prev) => (prev - speed + loopHeight) % loopHeight);
       frameId = requestAnimationFrame(animate);
     };
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, [loopHeight, spacing, animationStopped]);
+  }, [loopHeight, speed, animationStopped]);
 
   useEffect(() => {
     if (!onPositionChange) return;
     const container = document.querySelector("#bubble-container");
     if (!container) return;
-
     const bubbles = Array.from(container.querySelectorAll(".bubble-item")).map((el) => {
       const rect = el.getBoundingClientRect();
       return {
@@ -48,76 +84,91 @@ const BubbleAnimation = ({
       };
     });
     onPositionChange(bubbles);
-  }, [yPosition, onPositionChange]);
+  }, [yPosition, onPositionChange, bubbleSize]);
 
-  const getY = (offset) => {
-    const rawY = (yPosition + offset) % loopHeight;
+  const getY = (offsetIndex) => {
+    const rawY = (yPosition + offsetIndex * spacing) % loopHeight;
     return rawY > loopHeight / 2 ? rawY - loopHeight : rawY;
   };
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-auto z-10 font-rubik">
+    <div ref={rootRef} className="absolute inset-0 pointer-events-auto z-10 font-rubik">
       <div
         id="bubble-container"
         className="relative"
         style={{
           position: "absolute",
           top: "50%",
-          left: "37%",
+          left: "37.3%",
           transform: "translate(-50%, -50%)",
         }}
       >
         {categories.map((text, i) => {
-          const y = getY(i * spacing);
+          const y = getY(i);
           const isSelected = selectedCategory === text;
 
-          // Hide all except selected when animation is stopped
+          // <-- KEY FIX: hide non-selected bubbles when animation is stopped
           if (animationStopped && !isSelected) return null;
 
-         const fixedStyle = isSelected && animationStopped
-          ? {
-              position: "fixed",
-              top: "-2vh",     // <- Adjust this to align with the "O"
-              left: "7.5vw",    // <- Adjust this to center horizontally
-              transform: "translate(-50%, -50%)",
-              zIndex: 30,
-            }
-          : {
-              transform: `translateY(${y}px)`,
-            };
+          const rightOffsetPx = Math.round(128 * scale); // adjust horizontally
 
+          const upOffsetPx = -11; // 👈 negative value moves up, positive moves down
+          
+          const fixedStyle =
+            isSelected && animationStopped
+              ? {
+                  position: "fixed",
+                  top: "40%", // base position
+                  left: "60%",
+                  width: "26%",
+                  aspectRatio: "1 / 1",
+                  transform: `translate(calc(-50% + ${rightOffsetPx}px), calc(-50% + ${upOffsetPx}px))`,
+                  zIndex: 30,
+                }
+              : {
+                  transform: `translateY(${y}px)`,
+                };
+          
+
+          const hideThreshold = loopHeight / 2 - 140 * scale;
 
           return (
             <div
-              key={i}
-              className="bubble-item absolute w-[260px] h-[250px] rounded-full text-[23px] font-bold text-black overflow-hidden flex items-center justify-center"
-              style={{
-                ...fixedStyle,
-                background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
-                border: "1px solid rgba(255, 255, 255, 0.4)",
-                boxShadow: `
-                  inset 0 0 10px rgba(255, 255, 255, 0.3),
-                  inset 0 2px 4px rgba(255, 255, 255, 0.2),
-                  0 4px 8px rgba(0, 0, 0, 0.05)
-                `,
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                opacity: Math.abs(y) > loopHeight / 2 - 140 && !isSelected ? 0 : 1,
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                // Toggle selection
-                if (isSelected && animationStopped) {
-                  setSelectedCategory(null);
-                  setAnimationStopped(false);
-                } else if (!animationStopped) {
-                  setSelectedCategory(text);
-                  setAnimationStopped(true);
-                }
-              }}
-            >
-              {text}
-            </div>
+    key={i}
+    className="bubble-item absolute rounded-full text-[22px] font-[700] text-[#1C230C] overflow-hidden flex items-center justify-center"
+    style={{
+      ...fixedStyle,
+      width: `${bubbleSize}px`,
+      height: `${bubbleSize}px`,
+      lineHeight: `${bubbleSize}px`,
+      fontSize: Math.max(12, Math.round(bubbleSize * 0.12)),
+      background: `linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%)`,
+      border: "1px solid rgba(255, 255, 255, 0.4)",
+      boxShadow: `
+        inset 0 0 10px rgba(255, 255, 255, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.05)
+      `,
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
+      opacity: Math.abs(y) > hideThreshold && !isSelected ? 0 : 1,
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+    onClick={() => {
+      if (isSelected && animationStopped) {
+        setSelectedCategory(null);
+        setAnimationStopped(false);
+      } else if (!animationStopped) {
+        setSelectedCategory(text);
+        setAnimationStopped(true);
+      }
+    }}
+  >
+    {text}
+  </div>
           );
         })}
       </div>
