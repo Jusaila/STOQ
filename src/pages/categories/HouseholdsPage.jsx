@@ -114,9 +114,10 @@ const HouseholdPage = () => {
               <div className="relative flex flex-col items-center justify-center">
                 
                 {/* LEFT TOP TEXT - responsive positioning */}
-                <div className="w-full flex justify-start mb-8 lg:mb-12 pl-4 sm:pl-8 md:ml-[-20%] lg:ml-[-35%] xl:ml-[-45%]">
+                <div className="w-full flex justify-start mb-8 lg:mb-12 pl-4 sm:pl-8 md:ml-[-20%] lg:ml-[-35%] xl:ml-[-55%]">
                   <div className="text-left">
                     <h2 className="
+                    mb-5
                       text-[#6E8A28] 
                       font-bold 
                       leading-tight 
@@ -157,7 +158,7 @@ const HouseholdPage = () => {
 
                   {/* HOUSEHOLDS Bubble on O */}
                   <div
-                    className="absolute rounded-full font-bold text-[#1C230C] flex items-center justify-center text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl"
+                    className="absolute rounded-full font-bold text-[#1C230C] flex items-center justify-center text-xs sm:text-sm md:text-lg lg:text-xl xl:text-[22px]"
                     style={{
                       width: "26%",
                       aspectRatio: "1/1",
@@ -201,9 +202,9 @@ const HouseholdPage = () => {
                 {/* SEE.DO.ENJOY Slogan - responsive positioning */}
                 <div className="w-full flex justify-end mt-8 lg:mt-1 pr-4 sm:pr-8">
                   <div 
-                    className="text-[#596F22] font-bold font-rubik 
-                      text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl
-                      md:mr-[-10%] lg:mr-[-20%] xl:mr-[-37%]" 
+                    className="text-[#596F22] font-semibold font-rubik 
+                      text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px]
+                      md:mr-[-10%] lg:mr-[-20%] xl:mr-[-34%]" 
                   >
                     SEE. DO. ENJOY.
                   </div>
@@ -330,60 +331,56 @@ const HouseholdPage = () => {
     <section className="relative w-full bg-white pt-16 pb-24 px-2 md:px-4 overflow-hidden font-rubik">
       {/* Right Section BG Image — position absolute and top-right aligned */}
       <img
-        src="/images/Bubbles.svg"
+        src="/images/household/Bubbles.svg"
         alt="right gradient"
-        className="absolute top-1 right-0 w-[242px] h-[262px] object-contain pointer-events-none z-0"
+        className="absolute top-6 right-[12%] w-[242px] h-[262px] object-contain pointer-events-none z-0"
       />
-      <div className="relative z-10 w-full px-24">
-  {/* Centered H2 across both columns */}
-  <h2 className="text-[#6E8A28] font-semibold text-[36px] mb-12 text-center">
-    See. Do. Enjoy.
-  </h2>
 
-  {/* Grid Section */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-    {/* Left Section */}
-    <div className="flex flex-col text-lg">
-      <div>
-        <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
-          Groceries, cleaners, meds, bulbs—STOQ is the home inventory app that keeps every essential in sight and in stock.
-          One shared app lets every family member see exactly what’s in the house—and where to find it.
-        </p>
-        <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-0">
-          Instant clarity from the first use. STOQ’s game-style interface makes using the app fun—no training required for
-          You, Your Family or Your Household Members.
-        </p>
-      </div>
+    <div className="relative z-10 w-full px-2 md:px-4">
+      {/* Constrain content */}
+      <div className="max-w-[1280px] mx-auto">
+        {/* Centered H2 across both columns */}
+        <h2 className="text-[#6E8A28] font-semibold text-[36px] mb-12 text-center">
+          See. Do. Enjoy.
+        </h2>
 
-      {/* Left Image — below text & flush left */}
-      <div className="-ml-[120px] m-0 p-0 pt-0">
-        <img
-          
-          src="/images/Bubbles (1).svg"
-          alt="left gradient"
-          className="w-[242px] h-[262px] object-contain"
-        />
+        {/* Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-[1280px] mx-auto">
+          {/* Left Section */}
+          <div className="flex flex-col text-lg">
+            <div>
+              <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+                Groceries, cleaners, meds, bulbs—STOQ is the home inventory app that keeps every essential in sight and in stock.
+                One shared app lets every family member see exactly what’s in the house—and where to find it.
+              </p>
+             
+            </div>
+
+            {/* Left Image — below text & flush left */}
+            <div className="-ml-16 -mt-20 p-0 relative">
+              <img
+                src="/images/household/Bubbles (1).svg"
+                alt="left gradient"
+                className="w-[242px] h-[262px] object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="relative flex flex-col justify-start text-lg">
+            <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+              In-app chat sits on every Household item card—complete with location, expiry, and reorder status—so you can restock in seconds.
+            </p>
+            <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+              STOQ works for everyone—use it on your own, share it with family or housemates, and keep your home-help team in sync.
+            </p>
+            
+          </div>
+        </div>
       </div>
     </div>
-
-    {/* Right Section */}
-    <div className="relative flex flex-col justify-start text-lg pt-[2.85rem]">
-      <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
-        In-app chat sits on every Household item card—complete with location, expiry, and reorder status—so you can restock in seconds.
-      </p>
-      <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
-        STOQ works for everyone—use it on your own, share it with family or housemates, and keep your home-help team in sync.
-      </p>
-      <p className="text-[#535862] font-normal leading-relaxed mb-4">
-        STOQ Clusters is One system, multiple worlds—work, home, hobbies, family—all in one place.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-     
     </section>
+
 
 
     <TestimonialSection />
@@ -392,7 +389,7 @@ const HouseholdPage = () => {
     <div className="flex justify-center mt-0 pt-0 -translate-y-2 font-rubik">
       <a 
         href="/pricing" 
-        className="text-[#6E8A28] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline font-rubik"
+        className="text-[#6E8A28] font-semibold px-8 py-1 text-[16px] transition-all duration-200 hover:underline font-rubik"
       >
         See all plans
       </a>
@@ -400,22 +397,22 @@ const HouseholdPage = () => {
  
     {/* call to action */}
     <section className="w-full py-40 flex flex-col items-center justify-center text-center px-4 font-rubik">
-      <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 mb-4">
+      <h2 className="text-2xl md:text-[36px] font-semibold text-[#181D27] mb-4">
         Ready to run your home like clockwork?
       </h2>
-      <p className="text-gray-500 text-base md:text-xl mb-6">
+      <p className="text-[#535862] text-base md:text-[20px] mb-6">
         Start your free trial now and see every item in one tidy home.
       </p>
       
       <div className="flex gap-4 items-center">
-  {/* Watch Demo */}
-  {/* <button className="w-[150px] h-[45px] border-[2px] border-gray-200 text-[#1C230C] text-base font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
-    Watch Demo
-  </button>
-   */}
-  <Button size="md" variant="secondary" className="text-[#414651] w-[117px] font-semibold text-[14px]">Watch Demo</Button>
-  <Button size="md" className="text-[#1C230C] w-[111px] font-semibold text-[14px]">Get started</Button>
-</div>
+        {/* Watch Demo */}
+        {/* <button className="w-[150px] h-[45px] border-[2px] border-gray-200 text-[#1C230C] text-base font-semibold rounded-full hover:bg-gray-100 transition flex items-center justify-center">
+          Watch Demo
+        </button>
+        */}
+        <Button size="md" variant="secondary" className="text-[#414651] w-[117px] font-semibold text-[14px]">Watch Demo</Button>
+        <Button size="md" className="text-[#1C230C] w-[111px] font-semibold text-[14px]">Get started</Button>
+      </div>
 
 
     </section>
