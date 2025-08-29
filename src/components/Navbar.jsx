@@ -146,7 +146,7 @@ const Navbar = () => {
           Sign up
         </a> */}
    
-         <a
+   {/* <a
   href="#"
   style={{
     display: "inline-block",
@@ -194,10 +194,10 @@ const Navbar = () => {
   }
 >
   Sign up
-</a>
+</a> */}
        
-       {/* <Button size="md" variant="secondary" className="w-[74px] px-[14]">Login</Button> */}
-{/* <Button size="md" variant="primary" className="w-[84px]">Sign up</Button> */}
+       <Button size="md" variant="secondary" className="w-[74px] font-semibold text-[#414651]">Login</Button>
+<Button size="md" variant="primary" className="w-[84px] font-semibold text-[#1C230C]">Sign up</Button>
 
 
 

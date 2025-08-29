@@ -48,7 +48,7 @@ const PersonalPricingPlans = () => {
 
         <section className="py-20 px-4 text-center">
        
-        <h3 className="text-3xl md:text-4xl font-bold text-[#8CB031] mt-4 mb-10">
+        <h3 className="text-3xl md:text-4xl font-bold text-[#6E8A28] mt-4 mb-10">
             Personal
         </h3>
 

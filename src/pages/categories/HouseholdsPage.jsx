@@ -123,21 +123,21 @@ const HouseholdPage = () => {
                       text-2xl       /* mobile */
                       sm:text-3xl    /* small screens */
                       md:text-4xl    /* tablets */
-                      lg:text-5xl    /* laptops */
-                      xl:text-5xl    /* desktop */
+                      lg:text-[48px]    /* laptops */
+                      xl:text-[48px]    /* desktop */
                     ">
-                      HOME <span className="text-[#62635b]">Supply Harmony.</span>
+                      HOME <span className="text-[rgba(0,0,0,0.6)]">Supply Harmony.</span>
                     </h2>
 
                     <p className="
-                      text-[#63645c] 
+                      text-[rgba(0,0,0,0.6)] 
                       mt-2 
                       font-semibold 
                       text-sm        /* mobile */
                       sm:text-base   /* small screens */
                       md:text-lg     /* tablets */
-                      lg:text-xl     /* laptops */
-                      xl:text-2xl    /* desktop */
+                      lg:text-[24px]    /* laptops */
+                      xl:text-[24px]    /* desktop */
                     ">
                       See supplies. Act together. Enjoy calm.
                     </p>
@@ -277,11 +277,11 @@ const HouseholdPage = () => {
 
       <section className="bg-white flex flex-col items-center justify-center font-rubik py-20 overflow-hidden">
       <div className="max-w-8xl w-full px-28">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#181D27] mb-4 text-left">
+        <h1 className="text-4xl md:text-[36px] font-semibold text-[#181D27] mb-6 text-center">
           Home runs better with <span className="text-[#181D27]">STOQ</span>.
         </h1>
 
-        <p className="text-gray-600 text-lg mb-16 max-w-2xl text-left">
+        <p className="text-[#535862] text-[20px] mb-16 max-w-3xl mx-auto text-center font-normal">
           See what's on hand, act together, and evolve into everyday peace of mind.
         </p>
       </div>
@@ -302,7 +302,7 @@ const HouseholdPage = () => {
                 alt={item.label}
                 className="w-[350px] h-[350px] object-contain mb-4"
               />
-              <p className="text-lg font-semibold text-center text-gray-800">
+              <p className="text-[24px] font-semibold text-center text-[#181D27]">
                 {item.label}
               </p>
             </div>
@@ -330,51 +330,59 @@ const HouseholdPage = () => {
     <section className="relative w-full bg-white pt-16 pb-24 px-2 md:px-4 overflow-hidden font-rubik">
       {/* Right Section BG Image — position absolute and top-right aligned */}
       <img
-        src="/images/Clip path group.png"
+        src="/images/Bubbles.svg"
         alt="right gradient"
-        className="absolute top-1 right-0 w-[550px] object-contain pointer-events-none z-0"
+        className="absolute top-1 right-0 w-[242px] h-[262px] object-contain pointer-events-none z-0"
       />
+      <div className="relative z-10 w-full px-24">
+  {/* Centered H2 across both columns */}
+  <h2 className="text-[#6E8A28] font-semibold text-[36px] mb-12 text-center">
+    See. Do. Enjoy.
+  </h2>
 
-      <div className="relative z-10 w-full grid grid-cols-1 md:grid-cols-2 gap-16 px-24">
-        
-        {/* Left Section */}
-        <div className="flex flex-col text-lg">
-          <h2 className="text-[#6E8A28] font-medium text-5xl mb-6">See. Do. Enjoy.</h2>
-
-          <div>
-            <p className="text-[#535862] font-normal leading-relaxed mb-4">
-              Groceries, cleaners, meds, bulbs—STOQ is the home inventory app that keeps every essential in sight and in stock.
-              One shared app lets every family member see exactly what’s in the house—and where to find it.
-            </p>
-            <p className="text-[#535862] font-normal leading-relaxed mb-0">
-              Instant clarity from the first use. STOQ’s game-style interface makes using the app fun—no training required for
-              You, Your Family or Your Household Members.
-            </p>
-          </div>
-
-          {/* Left Image — below text & flush left */}
-          <div className="-ml-[120px] m-0 p-0 pt-0">
-            <img
-              src="/images/Clip path group-left.png"
-              alt="left gradient"
-              className="w-[550px] object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="relative flex flex-col justify-start text-lg pt-[2.85rem]">
-          <p className="text-[#535862] font-normal leading-relaxed mb-4">
-            In-app chat sits on every Household item card—complete with location, expiry, and reorder status—so you can restock in seconds.
-          </p>
-          <p className="text-[#535862] font-normal leading-relaxed mb-4">
-            STOQ works for everyone—use it on your own, share it with family or housemates, and keep your home-help team in sync.
-          </p>
-          <p className="text-[#535862] font-normal leading-relaxed mb-4">
-            STOQ Clusters is One system, multiple worlds—work, home, hobbies, family—all in one place.
-          </p>
-        </div>
+  {/* Grid Section */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    {/* Left Section */}
+    <div className="flex flex-col text-lg">
+      <div>
+        <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+          Groceries, cleaners, meds, bulbs—STOQ is the home inventory app that keeps every essential in sight and in stock.
+          One shared app lets every family member see exactly what’s in the house—and where to find it.
+        </p>
+        <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-0">
+          Instant clarity from the first use. STOQ’s game-style interface makes using the app fun—no training required for
+          You, Your Family or Your Household Members.
+        </p>
       </div>
+
+      {/* Left Image — below text & flush left */}
+      <div className="-ml-[120px] m-0 p-0 pt-0">
+        <img
+          
+          src="/images/Bubbles (1).svg"
+          alt="left gradient"
+          className="w-[242px] h-[262px] object-contain"
+        />
+      </div>
+    </div>
+
+    {/* Right Section */}
+    <div className="relative flex flex-col justify-start text-lg pt-[2.85rem]">
+      <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+        In-app chat sits on every Household item card—complete with location, expiry, and reorder status—so you can restock in seconds.
+      </p>
+      <p className="text-[#535862] font-normal text-[20px] leading-relaxed mb-4">
+        STOQ works for everyone—use it on your own, share it with family or housemates, and keep your home-help team in sync.
+      </p>
+      <p className="text-[#535862] font-normal leading-relaxed mb-4">
+        STOQ Clusters is One system, multiple worlds—work, home, hobbies, family—all in one place.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+     
     </section>
 
 
@@ -384,7 +392,7 @@ const HouseholdPage = () => {
     <div className="flex justify-center mt-0 pt-0 -translate-y-2 font-rubik">
       <a 
         href="/pricing" 
-        className="text-[#8CB031] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline font-rubik"
+        className="text-[#6E8A28] font-semibold px-8 py-1 text-md transition-all duration-200 hover:underline font-rubik"
       >
         See all plans
       </a>
