@@ -1,47 +1,7 @@
 import React, { useRef } from "react";
 import { FaStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const testimonials = [
-  {
-    image: "/images/testimonial1.jpg",
-    name: "Alisa Hester",
-    role: "PM, Hourglass",
-    agency: "Web Design Agency",
-    rating: 5,
-  },
-  {
-    image: "/images/testimonial3.jpg",
-    quote:
-      "We collectively adore STOQ. It has streamlined our inventory management process. Makes efforts of 5 team members look seamless and consistently impressive.",
-    name: "Rich Wilson",
-    role: "COO, Command+R",
-    agency: "Web Development Agency",
-    rating: 5,
-  },
-  {
-    image: "/images/testimonial2.jpg",
-    name: "Annie Stanley",
-    role: "Designer, Catalog",
-    agency: "UX Agency",
-    rating: 4,
-  },
-  {
-    image: "/images/testimonial3.jpg",
-    name: "Johnny B",
-    role: "PM, Sisyphus",
-    agency: "Machine Learning Agency",
-    rating: 5,
-  },
-  {
-    image: "/images/testimonial1.jpg",
-    name: "Alisa Hester",
-    role: "PM, Hourglass",
-    agency: "Web Design Agency",
-    rating: 5,
-  },
-];
-
-const TestimonialSection = () => {
+const TestimonialSection = ({ testimonials = [], title = "Don’t just take our word for it" }) => {
   const sliderRef = useRef();
 
   const scroll = (direction) => {
@@ -55,9 +15,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="py-16 md:pl-20 bg-white font-rubik">
-      <h2 className="text-4xl font-bold text-[#6E8A28] mb-8">
-        Don’t just take our word for it
-      </h2>
+      <h2 className="text-4xl font-bold text-[#6E8A28] mb-8">{title}</h2>
 
       {/* Slider */}
       <div className="relative">
@@ -68,40 +26,49 @@ const TestimonialSection = () => {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="min-w-[300px] md:min-w-[360px] h-[480px] snap-start bg-transparent rounded-xl overflow-hidden shadow-md relative"
+              className="group min-w-[300px] md:min-w-[360px] h-[480px] snap-start rounded-xl overflow-hidden shadow-md relative"
             >
+              {/* Background Image */}
               <img
                 src={t.image}
                 alt={t.name}
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md p-4 rounded-lg">
+
+              {/* Shared background box */}
+              <div className="absolute left-4 right-4 bottom-4 bg-white/20 backdrop-blur-md p-4 rounded-lg transition-all duration-500">
+                {/* Quote (only visible on hover) */}
                 {t.quote && (
-                  <p className="text-sm text-white font-semibold mb-2">"{t.quote}"</p>
+                  <div className="opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[400px] transition-all duration-500">
+                    <p className="text-white font-semibold text-sm leading-relaxed mb-3">
+                      "{t.quote}"
+                    </p>
+                  </div>
                 )}
-                  
-                    <div className="flex text-white mb-1">
-                      {Array(t.rating)
-                        .fill()
-                        .map((_, i) => (
-                          <FaStar key={i} />
-                        ))}
-                    </div>
-                    <p className="font-bold text-black">{t.name}</p>
-                    <p className="text-white text-sm">{t.role}</p>
-                    <p className="text-white text-xs">{t.agency}</p>       
+
+                {/* Always visible info */}
+                <div className="flex text-yellow-400 mb-1">
+                  {Array(t.rating)
+                    .fill()
+                    .map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                </div>
+                <p className="font-bold text-white">{t.name}</p>
+                <p className="text-white text-sm">{t.role}</p>
+                <p className="text-white text-xs">{t.country}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Arrow Controls - Below the first card */}
+        {/* Arrow Controls */}
         <div className="flex gap-6 mt-6 ml-2">
           <button
             onClick={() => scroll("left")}
             className="bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:shadow-lg"
           >
-            <FaArrowLeft className="text-gray-500"/>
+            <FaArrowLeft className="text-gray-500" />
           </button>
           <button
             onClick={() => scroll("right")}

@@ -39,7 +39,7 @@ const Button = ({
   if (variant === 'primary') {
     variantClasses = [
       "relative",
-  "border-2 rounded-full border-[#8ba649]", // ✅ solid border with your color
+  "border-2 rounded-full border-[#9fb560]", // ✅ solid border with your color
 
   // ✅ Background (keep same)
   "[background:linear-gradient(#A9CF45,#A9CF45)_padding-box,linear-gradient(to_bottom,rgba(255,255,255,0.12),rgba(255,255,255,0))_border-box]",

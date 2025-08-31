@@ -8,6 +8,7 @@ import TestimonialSection from "../../components/TestimonialSection";
 import PersonalPricingPlans from "../../components/PersonalPricingPlans";
 import Button from "../../components/Button";
 
+
 const HouseholdPage = () => {
   const tryRef = useRef(null);
   const scrollRef = useRef(null);
@@ -22,6 +23,51 @@ const HouseholdPage = () => {
     { img: "reminder.png", label: "Reminder system" },
     { img: "log.png", label: "Log storage" },
     { img: "calm.png", label: "Calm, curated home" },
+  ];
+
+  //Testimonials
+
+  const testimonialsPage1 = [
+    {
+      image: "/images/household/Testimonials/Households Emily.jpg",
+      name: "Emily Brooks",
+      role: "Stay-at-home mom in countryside",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "I used to joke that our fridge was a black hole — things went in and were never seen again. STOQ changed that. Now it kindly ‘beeps’ at me before the milk goes bad or the yogurts expire. Fewer surprises, less waste, and honestly… more space in my fridge. I really appreciate STOQ for making my life easier.",
+    },
+    {
+      image: "/images/household/Testimonials/Aisha Khan.png",
+      name: "Aisha Khan",
+      role: "Flat-sharing with sister",
+      country: "USA / UK / Australia",
+      rating: 4,
+      quote: "My sister and I share a flat, and we’d often get lost with the groceries — checking cupboards, making lists, just trying not to forget anything or buy doubles. With STOQ, you see everything straight away — from food to clothes. Really handy!",
+    },
+    {
+      image: "/images/household/Testimonials/Michael Johnson.png",
+      name: "Michael Johnson",
+      role: "Dad of three teenagers",
+      country: "",
+      rating: 5,
+      quote: "Three teenagers at home, there’s always stuff everywhere — books, sports kits, snacks. What I like about STOQ is that there’s nothing to learn — you open it and it just makes sense. Now everyone in the family knows where things are. Life feels calmer.",
+    },
+    {
+      image: "/images/household/Testimonials/Households Maya.jpg",
+      name: "Maya Chen",
+      role: "Busy mum of two",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "With two kids, keeping the house tidy felt impossible. And then there are the toys, school bits, Pokémon cards and Funko figures — complete chaos. STOQ has helped bring order and saved me from endless searching. Now even my son’s started organising his own collection — he likes STOQ as much as I do",
+    },
+    {
+      image: "/images/household/Testimonials/Daniel Oliveira.png",
+      name: "Daniel Oliveira",
+      role: "Enjoys living solo",
+      country: "",
+      rating: 4,
+      quote: "A really handy tool. I can add products any way I want, whether by packages or by kilograms. STOQ helps me keep the kitchen organized and makes sure I never forget anything.",
+    },
   ];
   
 
@@ -383,7 +429,7 @@ const HouseholdPage = () => {
 
 
 
-    <TestimonialSection />
+    <TestimonialSection testimonials={testimonialsPage1}/>
     <PersonalPricingPlans />
      {/* CTA Button */}
     <div className="flex justify-center mt-0 pt-0 -translate-y-2 font-rubik">

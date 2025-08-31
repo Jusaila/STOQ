@@ -25,6 +25,50 @@ import Button from "../../components/Button";
     { img: "dash.png", label: "Usage analytics dashboard" },
     { img: "business.png", label: "Efficient business" },
   ];
+
+  //Testimonial
+  const testimonialsPage2 = [
+    {
+      image: "/images/construction/Testimonials/Construction Grace.jpg",
+      name: "Grace Harris",
+      role: "Procurement Manager",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "Managing supplies across multiple construction sites used to be chaos. With STOQ, I finally have full control over inventory levels and purchase planning. It flags shortages before they happen and saves hours of manual tracking every week. It’s become my daily tool for procurement.",
+    },
+    {
+      image: "/images/construction/Testimonials/Rajesh Patel.png",
+      name: "Rajesh Patel",
+      role: "Operations Supervisor",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "With STOQ, I can see stock levels across all sites and what’s already on the way. If we’re short on something, I just ping the team in chat and it gets handled. Gets the job done.",
+    },
+    {
+      image: "/images/construction/Testimonials/Construction Sofia.jpg",
+      name: "Sofia Becker",
+      role: "Interior Designer in a small construction company",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "Love how STOQ handles everything — units, currencies, all so simple. Saves me time at work, and I even use it for my home projects. Big thanks to the team — you nailed it",
+    },
+    {
+      image: "/images/construction/Testimonials/Construction Adrian.jpg",
+      name: "Adrian Williams",
+      role: "Site Supervisor at a family-run construction company.",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "Guys, STOQ seriously saves time and spares you the stress.  Just try it — you’ll get what I mean.",
+    },
+    {
+      image: "/images/construction/Testimonials/Walter Jenkins.png",
+      name: "Walter Jenkins",
+      role: "Construction Foreman",
+      country: "USA / UK / Australia",
+      rating: 5,
+      quote: "I’ve got a crew of six, different sites, plenty of materials to keep track of. With STOQ, everyone sees what’s in stock and what’s missing — no need for endless calls. If something’s needed, we just drop a note in the messenger and it gets sorted fast. Makes things easier for the guys and gives me peace of mind. Great tool.",
+    },
+    ];
   
 
   // Auto-scrolling functionality
@@ -383,7 +427,7 @@ import Button from "../../components/Button";
     </section>
 
 
-    <TestimonialSection />
+    <TestimonialSection testimonials={testimonialsPage2}/>
     <ProffessionalPricingPlans />
      {/* CTA Button */}
      <div className="flex justify-center mt-0 pt-0 -translate-y-2 font-rubik">
