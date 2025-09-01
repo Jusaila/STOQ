@@ -376,11 +376,11 @@ const HouseholdPage = () => {
 
     <section className="relative w-full bg-white pt-16 pb-24 px-2 md:px-4 overflow-hidden font-rubik">
       {/* Right Section BG Image — position absolute and top-right aligned */}
-      <img
+      {/* <img
         src="/images/household/Bubbles.svg"
         alt="right gradient"
         className="absolute top-6 right-[12%] w-[242px] h-[262px] object-contain pointer-events-none z-0"
-      />
+      /> */}
 
     <div className="relative z-10 w-full px-2 md:px-4">
       {/* Constrain content */}
@@ -403,13 +403,13 @@ const HouseholdPage = () => {
             </div>
 
             {/* Left Image — below text & flush left */}
-            <div className="-ml-16 -mt-20 p-0 relative">
+            {/* <div className="-ml-16 -mt-20 p-0 relative">
               <img
                 src="/images/household/Bubbles (1).svg"
                 alt="left gradient"
                 className="w-[242px] h-[262px] object-contain"
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Right Section */}
