@@ -56,7 +56,7 @@ const TestimonialSection = ({ testimonials = [], title = "Don’t just take our 
                 </div>
                 <p className="font-bold text-white">{t.name}</p>
                 <p className="text-white text-sm">{t.role}</p>
-                <p className="text-white text-xs">{t.country}</p>
+                {/* <p className="text-white text-xs">{t.country}</p> */}
               </div>
             </div>
           ))}

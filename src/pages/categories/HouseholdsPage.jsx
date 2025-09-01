@@ -15,7 +15,7 @@ const HouseholdPage = () => {
 
   const items = [
     { img: "simple.png", label: "Simple and Fun" },
-    { img: "find.png", label: "Find Tings" },
+    { img: "find.png", label: "Find Things" },
     { img: "chat.png", label: "Chat together" },
     { img: "track.png", label: "Track Usage" },
     { img: "declu.png", label: "Declutter" },
