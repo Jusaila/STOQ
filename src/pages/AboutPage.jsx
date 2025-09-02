@@ -198,20 +198,20 @@ export default function AboutPage() {
               <div className="text-sm font-medium">Everything</div>
             </div>
           </div>
-        </div>
+        </div>  
 
         {/* Step 2: Two images side by side */}
         <div className="flex justify-end gap-4 mb-4">
           <div className="rounded-lg overflow-hidden shadow-lg w-[143px] h-24">
             <img 
-              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop&crop=center" 
+              src="images/about/medium-shot-woman-with-tablet 1.svg" 
               alt="Construction worker" 
               className="w-full h-full object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg w-[143px] h-24">
             <img 
-              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop&crop=center" 
+              src="images/about/young-woman-working-warehouse 1.svg" 
               alt="Team working" 
               className="w-full h-full object-cover"
             />
@@ -228,7 +228,7 @@ export default function AboutPage() {
           </div>
           <div className="w-[143px] h-24 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&crop=center" 
+              src="images/about/asian-employees-checking-warehouse.svg" 
               alt="Warehouse worker" 
               className="w-full h-full object-cover"
             />
