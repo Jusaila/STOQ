@@ -141,116 +141,110 @@ export default function AboutPage() {
       </section>
 
       <div className="min-h-screen bg-gray-50 px-8 py-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Content Section */}
-          <div className="space-y-8">
-            {/* Main Heading */}
-            <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-green-600 leading-tight mb-4">
-                STOQ: Built for Everyone
-              </h1>
-              <p className="text-lg text-gray-600 font-medium">
-                STOQ gives full picture and control to your everyday storage.
-              </p>
-            </div>
+  <div className="max-w-6xl mx-auto">
+    <div className="flex flex-col lg:flex-row gap-12">
+      {/* Left Content Section */}
+      <div className="lg:w-2/3 space-y-6">
+        {/* Main Heading */}
+        <div>
+          <h1 className="text-4xl lg:text-[48px] font-semibold text-[#6E8A28] leading-tight mb-4">
+            STOQ: Built for Everyone
+          </h1>
+          <p className="text-xl text-[#535862] font-normal mb-8">
+            STOQ gives full picture and control to your everyday storage.
+          </p>
+        </div>
 
-            {/* Subheading */}
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                STOQ: Made for real life.
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We built it on a construction site, then realized it helps anyone—from solo makers and 
-                busy parents to growing teams and curious kids. No manuals, no spreadsheets, just 
-                one easy app that keeps every item in sight. Free, forever.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Because starting out is hard enough, the basic version of STOQ costs nothing—so you 
-                can save time, cut stress, and focus on what matters STOQ isn't just for business. It's 
-                for life.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                It reflects BAFID's journey, our passion for design and functionality, and our mission to 
-                help people manage resources smarter — at home, in the field, or anywhere in 
-                between.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Download STOQ from the App Store and Google Play. Register and get started free. 
-                Premium features are available by subscription.
-              </p>
-              <p className="text-gray-800 font-medium mb-2">
-                BAFID — Creating Solutions That Simplify Life.
-              </p>
-              <p className="text-gray-800 font-medium">
-                See. Do. Grow..
-              </p>
+        {/* Subheading */}
+        <div>
+          <h2 className="text-[#535862] mb-4">
+            STOQ: Made for real life.
+          </h2>
+          <p className="text-[#535862] leading-relaxed mb-4">
+            We built it on a construction site, then realized it helps anyone—from solo makers and 
+            busy parents to growing teams and curious kids. No manuals, no spreadsheets, just 
+            one easy app that keeps every item in sight. Free, forever.
+          </p>
+          <p className="text-[#535862] leading-relaxed mb-4">
+            Because starting out is hard enough, the basic version of STOQ costs nothing—so you 
+            can save time, cut stress, and focus on what matters STOQ isn't just for business. It's 
+            for life.
+          </p>
+          <p className="text-[#535862] leading-relaxed mb-4">
+            It reflects BAFID's journey, our passion for design and functionality, and our mission to 
+            help people manage resources smarter — at home, in the field, or anywhere in 
+            between.
+          </p>
+          <p className="text-[#535862] leading-relaxed mb-4">
+            Download STOQ from the App Store and Google Play. Register and get started free. 
+            Premium features are available by subscription.
+          </p>
+          <p className="text-[#535862] mb-2">
+            BAFID — Creating Solutions That Simplify Life.
+          </p>
+          <p className="text-[#535862]">
+            See. Do. Grow..
+          </p>
+        </div>
+      </div>
+
+      {/* Right Images Section - aligned with paragraph */}
+      <div className="lg:w-1/3 mt-28 lg:mt-48 lg:min-w-[460px]">
+        {/* Step 1: Top right - Simplify Everything card */}
+        <div className="flex justify-end mb-4">
+          <div className="bg-[#6E8A28] hover:bg-[#82984e] text-white font-semibold rounded-lg shadow-lg transition-colors w-[143px] h-24 flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-sm font-medium">Simplify</div>
+              <div className="text-sm font-medium">Everything</div>
             </div>
           </div>
+        </div>
 
-          {/* Right Images Section - Stepped Layout */}
-          <div className="relative">
-            {/* Step 1: Top right - Simplify Everything card */}
-            <div className="flex justify-end mb-4">
-              <div className="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-lg transition-colors w-[143px] h-24 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Simplify</div>
-                  <div className="text-sm font-medium">Everything</div>
-                </div>
-              </div>
+        {/* Step 2: Two images side by side */}
+        <div className="flex justify-end gap-4 mb-4">
+          <div className="rounded-lg overflow-hidden shadow-lg w-[143px] h-24">
+            <img 
+              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop&crop=center" 
+              alt="Construction worker" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg w-[143px] h-24">
+            <img 
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop&crop=center" 
+              alt="Team working" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Step 3: Center image with side cards */}
+        <div className="flex justify-end gap-4">
+          <div className="w-[143px] h-24 bg-[#C0DD7A] text-gray-800 font-semibold rounded-lg shadow-lg transition-colors flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-sm font-medium">Free</div>
+              <div className="text-sm font-medium">Forever</div>
             </div>
-
-            {/* Step 2: Two images side by side */}
-            <div className="flex justify-end gap-4 mb-4">
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop&crop=center" 
-                  alt="Construction worker" 
-                  className="w-[143px] h-24 object-cover"
-                />
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop&crop=center" 
-                  alt="Team working" 
-                  className="w-[143px] h-24 object-cover"
-                />
-              </div>
+          </div>
+          <div className="w-[143px] h-24 rounded-lg overflow-hidden shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&crop=center" 
+              alt="Warehouse worker" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="w-[143px] h-24 bg-[#D1E7A0] text-gray-800 font-semibold rounded-lg shadow-lg transition-colors flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-sm font-medium">Track with</div>
+              <div className="text-sm font-medium">Ease</div>
             </div>
-
-
-           {/* Step 3: Center image with side cards */}
-            <div className="flex justify-end gap-4">
-              {/* Free Forever card */}
-              <div className="w-[143px] h-24 bg-green-300 hover:bg-green-400 text-gray-800 font-semibold rounded-lg shadow-lg transition-colors flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Free</div>
-                  <div className="text-sm font-medium">Forever</div>
-                </div>
-              </div>
-              
-              {/* Center image */}
-              <div className="w-[143px] h-24 rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop&crop=center" 
-                  alt="Warehouse worker" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Track with Ease card */}
-              <div className="w-[143px] h-24 bg-green-300 hover:bg-green-400 text-gray-800 font-semibold rounded-lg shadow-lg transition-colors flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-sm font-medium">Track with</div>
-                  <div className="text-sm font-medium">Ease</div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
 
         {/* call to action */}
     <section className="w-full py-40 flex flex-col items-center justify-center text-center px-4 font-rubik">
