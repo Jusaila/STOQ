@@ -10,6 +10,8 @@ import LandingPage from "./pages/LandingPage";
 // Import your category-specific pages
 import HouseholdsPage from "./pages/categories/HouseholdsPage";
 import ConstructionPage from "./pages/categories/ConstructionPage";
+import AboutPage from "./pages/AboutPage";
+import PricingPage from "./pages/PricingPage";
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
       <Routes>
         {/* Landing page route */}
         <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+
 
          {/* Custom pages per category */}
         <Route path="/households" element={<HouseholdsPage />} />

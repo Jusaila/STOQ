@@ -75,7 +75,7 @@ const HouseholdPage = () => {
   useEffect(() => {
     const container = scrollRef.current;
     let scrollAmount = 0;
-    let speed = 0.5;
+    let speed = 1;
 
     function autoScroll() {
       if (container) {

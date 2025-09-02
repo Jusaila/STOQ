@@ -55,6 +55,11 @@ const LandingPage = () => {
       <HeroSection />
       <SeeDoGrowSection />
       <TestimonialSection testimonials={testimonialsPage1}/>
+      <div className="flex justify-center">
+      <h2 className="text-2xl md:text-5xl font-semibold text-[#4B6100] mt-4 mb-2">
+            Choose your plan
+        </h2>
+      </div>
       <ProffessionalPricingPlans />
       <PersonalPricingPlans />
       <Footer />

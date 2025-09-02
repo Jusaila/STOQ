@@ -5,17 +5,17 @@ import Button from "./Button";
 // Industry items with icons
 const industryItems = [
   { label: "Construction", icon: "/icons/Vector.png", link: "construction" },
-  { label: "Home Services", icon: "/icons/Vector4.png", link: "#Home Services" },
-  { label: "Restaurants", icon: "/icons/Vector3.png", link: "#Restaurants" },
-  { label: "Workshops", icon: "/icons/Vector2.png", link: "#Workshops" },
+  { label: "Home Services", icon: "/icons/Vector4.png", link: "" },
+  { label: "Restaurants", icon: "/icons/Vector3.png", link: "" },
+  { label: "Workshops", icon: "/icons/Vector2.png", link: "" },
   { label: "Households", icon: "/icons/Vector3.png", link: "Households" },
-  { label: "Farmers", icon: "/icons/Vector.png", link: "#Farmers" },
-  { label: "Hobby/Collections", icon: "/icons/Vector3.png", link: "#Hobby/Collections" },
-  { label: "Wine lovers", icon: "/icons/Vector.png", link: "#Wine lovers" },
-  { label: "Kids", icon: "/icons/Vector4.png", link: "#Kids" },
-  { label: "Freelancers", icon: "/icons/Vector2.png", link: "#Freelancers" },
-  { label: "Wellness/Beauty", icon: "/icons/Vector4.png", link: "#Wellness/Beauty" },
-  { label: "Sports/Health", icon: "/icons/Vector3.png", link: "#sports/Health" },
+  { label: "Farmers", icon: "/icons/Vector.png", link: "" },
+  { label: "Hobby/Collections", icon: "/icons/Vector3.png", link: "" },
+  { label: "Wine lovers", icon: "/icons/Vector.png", link: "" },
+  { label: "Kids", icon: "/icons/Vector4.png", link: "" },
+  { label: "Freelancers", icon: "/icons/Vector2.png", link: "" },
+  { label: "Wellness/Beauty", icon: "/icons/Vector4.png", link: "" },
+  { label: "Sports/Health", icon: "/icons/Vector3.png", link: "" },
 ];
 const featuresItems = [
   { label: "Construction", icon: "/icons/Vector.png", link: "#Construction" },
@@ -50,8 +50,8 @@ const Navbar = () => {
     { name: "Industries", items: industryItems.map(i => ({ label: i.label, link: i.link })) },
     { name: "Features", items: [], link: "#Features"},
     { name: "User's Cases", items: [], link: "#Uses's Cases" },
-    { name: "Pricing", items: [], link: "#Pricing" },
-    { name: "About STOQ", items: [], link: "#About STOQ" },
+    { name: "Pricing", items: [], link: "/pricing" },
+    { name: "About STOQ", items: [], link: "/about" },
   ];
   
   return (

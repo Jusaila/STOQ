@@ -250,7 +250,7 @@ useEffect(() => {
             >
               {playInCircle3 ? (
                 <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  src="/videos/LandingPage/lifeline 0 chaos.mp4"
                   autoPlay
                   muted
                   loop
@@ -282,7 +282,7 @@ useEffect(() => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/VIDEO_ID_3?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_3"
+                src="/videos/LandingPage/lifeline 0 chaos.mp4"
                 title="STOQ Timeline Video"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
@@ -389,7 +389,7 @@ useEffect(() => {
             >
               {playInCircle5 ? (
                 <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  src="/videos/LandingPage/Works the way your work.mp4"
                   autoPlay
                   muted
                   loop
@@ -421,7 +421,7 @@ useEffect(() => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/bDVpI23q8Zg?autoplay=1&mute=1&loop=1&playlist=bDVpI23q8Zg"
+                src="/videos/LandingPage/Works the way your work.mp4"
                 title="STOQ Work Video"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"

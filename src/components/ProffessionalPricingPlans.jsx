@@ -48,9 +48,7 @@ const ProffessionalPricingPlans = () => {
     return (
       <div className="bg-white font-rubik">
          <section className="py-20 px-4 text-center">
-        <h2 className="text-2xl md:text-5xl font-semibold text-[#4B6100] mt-4 mb-14">
-            Choose your plan
-        </h2>
+      
         <h3 className="text-3xl md:text-4xl font-bold text-[#8CB031] mt-4 mb-10">
             Professional
         </h3>
