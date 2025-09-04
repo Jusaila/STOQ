@@ -181,36 +181,37 @@ useEffect(() => {
         <div className={`relative ${showVideo2 ? "w-full h-full" : "flex-shrink-0 mb-10 lg:mb-0"}`}>
           {!showVideo2 ? (
             <div
-              ref={circleRef2}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
-              onClick={() => setShowVideo2(true)}
-            >
-              {playInCircle2 ? (
-                <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover rounded-full"
-                />
-              ) : (
-                <img
-                  src="/images/about.jpg"
-                  alt="Second Video"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              )}
-            </div>
+            ref={circleRef2}
+            className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+            onClick={() => setShowVideo2(true)}
+          >
+            {playInCircle2 ? (
+              <video
+                src="/videos/LandingPage/instant.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src="/images/about.jpg"
+                alt="Second Video"
+                className="w-full h-full object-cover"
+              />
+            )}
+          </div>
+          
           ) : (
             <div className="relative w-full h-full flex justify-center items-center">
               <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
                 <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  muted
+                  src="/videos/LandingPage/instant.mp4"
+                  autoPlay                
                   loop
                   playsInline
+                  controls
                   className="w-full h-full object-cover rounded-xl"
                 />
                 <button
@@ -309,71 +310,72 @@ useEffect(() => {
        {/* Divider Line */}
        <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
-       {/* FOURTH SECTION */}
-      <section className={`flex flex-col lg:flex-row-reverse items-center justify-center px-4 lg:px-10 ${showVideo4 ? "h-[596px] py-0" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-        <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
-          {!showVideo4 ? (
-            <div
-              ref={circleRef4}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
-              onClick={() => setShowVideo4(true)}
-            >
-              {playInCircle4 ? (
-                <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="object-cover w-full h-full rounded-full"
-                />
-              ) : (
-                <img
-                  src="/images/about.jpg"
-                  alt="Fourth Video"
-                  className="object-cover w-full h-full rounded-full"
-                />
-              )}
-            </div>
-          ) : (
-            <div
-              className="relative w-[90vw] max-w-full h-[500px] rounded-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowVideo4(false);
-                }}
-                className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
-              >
-                <FaTimes className="w-4 h-4" />
-              </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/VIDEO_ID_6?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_6"
-                title="STOQ Clusters Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
-            </div>
-          )}
-        </div>
-
-        {!showVideo4 && (
-          <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
-            <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
-              STOQ Clusters multi-domain universe
-            </h2>
-            <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-              One system, multiple worlds—work, home, hobbies, family—all in one place.
-            </p>
-          </div>
+     {/* FOURTH SECTION */}
+<section
+  className={`flex ${
+    showVideo4 ? "flex-col" : "flex-col lg:flex-row-reverse"
+  } items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out bg-white overflow-hidden relative ${
+    showVideo4 ? "h-[592px] py-0" : "py-20"
+  }`}
+>
+  <div className={`relative ${showVideo4 ? "w-full h-full" : "flex-shrink-0 mb-10 lg:mb-0"}`}>
+    {!showVideo4 ? (
+      <div
+        ref={circleRef4}
+        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+        onClick={() => setShowVideo4(true)}
+      >
+        {playInCircle4 ? (
+          <video
+            src="/videos/LandingPage/clusters 2.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src="/images/about.jpg"
+            alt="Fourth Video"
+            className="w-full h-full object-cover"
+          />
         )}
-      </section>
+      </div>
+    ) : (
+      <div className="relative w-full h-full flex justify-center items-center">
+        <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+          <video
+            src="/videos/LandingPage/clusters 2.mp4"
+            autoPlay
+            loop
+            playsInline
+            controls
+            className="w-full h-full object-contain rounded-xl"
+          />
+          <button
+            onClick={() => setShowVideo4(false)}
+            className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+          >
+            <FaTimes className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    )}
+  </div>
+
+  {!showVideo4 && (
+    <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
+      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
+        STOQ Clusters multi-domain universe
+      </h2>
+      <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
+        One system, multiple worlds—work, home, hobbies, family—all in one place.
+      </p>
+    </div>
+  )}
+</section>
+
 
       {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
@@ -458,7 +460,7 @@ useEffect(() => {
             >
               {playInCircle6 ? (
                 <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  src="/videos/LandingPage/Life synd & lasting histpry top.mp4"
                   autoPlay
                   muted
                   loop
@@ -490,7 +492,7 @@ useEffect(() => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/VIDEO_ID_6?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_6"
+                src="/videos/LandingPage/Life synd & lasting histpry top.mp4"
                 title="STOQ Sync Video"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"

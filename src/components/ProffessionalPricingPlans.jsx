@@ -11,7 +11,7 @@ const professionalplans = [
       "1GB of storage",
       "Basic inventory tracking",
     ],
-    prefix: "Standard",
+    prefix: "Free",
   },
   {
     title: "Artisan",
@@ -57,11 +57,11 @@ const ProffessionalPricingPlans = () => {
             {professionalplans.map((plan, index) => (
             <div
             key={index}
-            className="rounded-xl border border-gray-200 shadow-sm p-6 bg-[#FBFDF6] flex flex-col h-full"
+            className="rounded-xl border border-[] shadow-sm p-6 bg-[#FBFDF6] flex flex-col h-full"
         >
             {/* Title + Badge */}
             <div className="flex justify-between items-center mb-4">
-            <h4 className="text-lg font-semibold text-gray-800">{plan.title}</h4>
+            <h4 className="text-[20px] font-semibold text-[#535862]">{plan.title}</h4>
             {plan.badge && (
                 <span className="bg-[#E4F2C6] text-[#4B6100] text-xs font-semibold px-2 py-1 rounded-full">
                 {plan.badge}
@@ -71,50 +71,50 @@ const ProffessionalPricingPlans = () => {
         
             {/* Price + Subtitle */}
             <div className="text-left mb-6">
-            <p className="text-[60px] font-extrabold text-black leading-none mb-6">
+            <p className="text-[60px] font-semibold text-[#181D27] leading-none mb-6">
                 {plan.price}
                 {plan.per && (
-                <span className="text-sm font-medium text-gray-600 ml-2">
+                <span className="text-[16px] font-medium text-[#535862] ml-2">
                     {plan.per}
                 </span>
                 )}
             </p>
-            <p className="text-sm text-gray-600 mt-2">{plan.subtitle}</p>
+            <p className="text-[16px] text-[#535862] font-normal mt-2">{plan.subtitle}</p>
             </div>
         
             {/* Button */}
-            <Button size="xl" variant="primary" className="w-[320px] mb-6">Get started</Button>
+            <Button size="xl" variant="primary" className="w-[320px] text-[#1C230C] text-[16px] mb-6">Get started</Button>
         
             {/* Divider */}
-            <div className="border-b border-gray-200 mb-4" />
+            <div className="-mx-6 border-b border-[#E9EAEB] mb-4" />
+            
         
             {/* Features */}
             <div className="text-left">
-            <h5 className="text-sm font-bold text-gray-700 mb-2">FEATURES</h5>
-            <p className="text-sm text-gray-700 font-medium mb-3">
-                Everything in <span className="font-bold">{plan.prefix}</span> plus….
-            </p>
-            <ul className="space-y-3 text-sm text-gray-600">
-                {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-2">
-                    <span className="w-5 h-5 min-w-[20px] min-h-[20px] rounded-full bg-white border border-[#6E8A28] flex items-center justify-center mt-0.5">
-                    <svg
-                        className="w-3 h-3 text-[#6E8A28]"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        >
-                        <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414L8.414 15 4.293 10.879a1 1 0 111.414-1.414l2.707 2.707 7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                        />
-                        </svg>
+            <h5 className="text-[16px] font-semibold text-[#181D27] mb-1">FEATURES</h5>
+            {index === 0 ? (
+              <p className="text-[16px] text-[#535862] mb-4">
+                <span className="font-normal">{plan.prefix}</span> plus....
+              </p>
+            ) : (
+              <p className="text-[16px] text-[#535862] font-normal mb-4">
+                Everything in <span className="font-bold">{plan.prefix}</span> plus....
+              </p>
+            )}
 
-                    </span>
-                    <span>{feature}</span>
-                </li>
-                ))}
-            </ul>
+          <ul className="space-y-4 text-[16px] text-[#535862] font-normal">
+            {plan.features.map((feature, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <img
+                  className="w-[24px] h-[24px] mt-0.5 flex-shrink-0"
+                  src="/images/Tickmark.svg"
+                  alt="tick"
+                />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
             </div>
         </div>
         

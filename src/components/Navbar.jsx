@@ -48,8 +48,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Industries", items: industryItems.map(i => ({ label: i.label, link: i.link })) },
-    { name: "Features", items: [], link: "#Features"},
-    { name: "User's Cases", items: [], link: "#Uses's Cases" },
+    // { name: "Features", items: [], link: "#Features"},
+    // { name: "User's Cases", items: [], link: "#Uses's Cases" },
     { name: "Pricing", items: [], link: "/pricing" },
     { name: "About STOQ", items: [], link: "/about" },
   ];
@@ -75,22 +75,49 @@ const Navbar = () => {
 
               {menu.items.length > 0 && openDropdown === menu.name && menu.name === "Industries" && (
               <div
-                className={`absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 ${
-                  menu.name === "Pricing" ? "w-[240px] left-1/2 -translate-x-1/2" : "w-[700px] left-0"
-                }`}
-              >
-                <div className="font-semibold text-gray-800 mb-4 w-full text-left">
-                  {menu.name}
-                </div>
-                <div className="grid grid-cols-3 gap-x-6 gap-y-4 w-[700px] text-gray-700 text-[14px]">
-                  {industryItems.map((item, i) => (
-                    <a key={i} href={item.link} className="flex items-center gap-2 hover:text-black">
-                      <img src={item.icon} alt={item.label} className="w-4 h-4 object-contain" />
+              className={`absolute top-full mt-4 bg-[#F0F7E1] backdrop-blur-md shadow-xl rounded-xl px-6 py-5 text-sm z-50 border border-gray-200 ${
+                menu.name === "Pricing" ? "w-[240px] left-1/2 -translate-x-1/2" : "w-[700px] left-0"
+              }`}
+            >
+              <div className="font-semibold text-gray-800 mb-4 w-full text-left">
+                {menu.name}
+              </div>
+            
+              <div className="grid grid-cols-3 gap-x-6 gap-y-4 w-[700px] text-[14px]">
+                {industryItems.map((item, i) =>
+                  item.link ? (
+                    // ✅ Active (Construction, Households)
+                    <a
+                      key={i}
+                      href={item.link}
+                      className="flex items-center gap-2 hover:text-black transition"
+                    >
+                      <img
+                        src={item.icon}
+                        alt={item.label}
+                        className="w-4 h-4 object-contain"
+                      />
                       <span>{item.label}</span>
                     </a>
-                  ))}
-                </div>
+                  ) : (
+                    // 🚫 Disabled (others not ready yet)
+                    <div
+                      key={i}
+                      className="flex items-center gap-2 text-gray-400 cursor-not-allowed select-none"
+                      title="Coming soon"
+                    >
+                      <img
+                        src={item.icon}
+                        alt={item.label}
+                        className="w-4 h-4 object-contain opacity-50"
+                      />
+                      <span>{item.label}</span>
+                    </div>
+                  )
+                )}
               </div>
+            </div>
+            
             )}
 
             {/* 
