@@ -12,6 +12,7 @@ import HouseholdsPage from "./pages/categories/HouseholdsPage";
 import ConstructionPage from "./pages/categories/ConstructionPage";
 import AboutPage from "./pages/AboutPage";
 import PricingPage from "./pages/PricingPage";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+
 
 
          {/* Custom pages per category */}

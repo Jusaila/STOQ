@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import "../index.css";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 // Industry items with icons
 const industryItems = [
@@ -59,7 +60,9 @@ const Navbar = () => {
       <div className="w-full max-w-screen-2xl flex items-center justify-between bg-white/30 backdrop-blur-md border border-gray-300 shadow-md rounded-xl px-6 py-3">
 
         {/* Left Logo */}
-        <img src="/images/logo-small.svg" alt="STOQ Logo" className="h-7"/>
+        <Link to="/">
+          <img src="/images/logo-small.svg" alt="STOQ Logo" className="h-7" />
+        </Link>
 
         {/* Middle Nav Items - Desktop */}
         <div className="hidden md:flex space-x-24 text-md font-normal text-[#414651] relative">
@@ -222,9 +225,11 @@ const Navbar = () => {
 >
   Sign up
 </a> */}
+
+{/* Temporery removel!!!!!! */}
        
-       <Button size="md" variant="secondary" className="w-[74px] font-semibold text-[#414651]">Login</Button>
-<Button size="md" variant="primary" className="w-[84px] font-semibold text-[#1C230C]">Sign up</Button>
+       {/* <Button size="md" variant="secondary" className="w-[74px] font-semibold text-[#414651]">Login</Button>
+<Button size="md" variant="primary" className="w-[84px] font-semibold text-[#1C230C]">Sign up</Button> */}
 
 
 

@@ -94,6 +94,39 @@ useEffect(() => {
   };
 }, []);
 
+const openVideo = (section) => {
+  setShowVideo1(false);
+  setShowVideo2(false);
+  setShowVideo3(false);
+  setShowVideo4(false);
+  setShowVideo5(false);
+  setShowVideo6(false);
+
+  switch (section) {
+    case 1:
+      setShowVideo1(true);
+      break;
+    case 2:
+      setShowVideo2(true);
+      break;
+    case 3:
+      setShowVideo3(true);
+      break;
+    case 4:
+      setShowVideo4(true);
+      break;
+    case 5:
+      setShowVideo5(true);
+      break;
+    case 6:
+      setShowVideo6(true);
+      break;
+    default:
+      break;
+  }
+};
+
+
   return (
     <div className="bg-white font-rubik">
       {/* First Section */}
@@ -106,47 +139,47 @@ useEffect(() => {
       >
         <div className={`relative ${showVideo1 ? "w-full h-full" : "flex-shrink-0 mb-10 lg:mb-0"}`}>
           {!showVideo1 ? (
-            <div
-              ref={circleRef1}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
-              onClick={() => setShowVideo1(true)}
-            >
-              {playInCircle1 ? (
-                <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover rounded-full"
-                />
-              ) : (
-                <img
-                  src="/images/about.jpg"
-                  alt="Preview"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              )}
-            </div>
+           <div
+           ref={circleRef1}
+           className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+           onClick={() => openVideo(1)}
+         >
+           {playInCircle1 ? (
+             <video
+               src="/videos/LandingPage/main video.mp4"
+               autoPlay
+               muted
+               loop
+               playsInline
+               className="w-full h-full object-cover"
+             />
+           ) : (
+             <img
+               src="/videos/LandingPage/1.png"
+               alt="Fourth Video"
+               className="w-full h-full object-cover"
+             />
+           )}
+         </div>
           ) : (
             <div className="relative w-full h-full flex justify-center items-center">
-              <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
-                <video
-                  src="https://www.w3schools.com/html/mov_bbb.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover rounded-xl"
-                />
-                <button
-                  onClick={() => setShowVideo1(false)}
-                  className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
-                >
-                  <FaTimes className="w-4 h-4" />
-                </button>
-              </div>
+            <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+              <video
+                src="/videos/LandingPage/main video.mp4"
+                autoPlay
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-contain rounded-xl"
+              />
+             <button
+            onClick={() => setShowVideo1(false)}
+            className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+          >
+                <FaTimes className="w-4 h-4" />
+              </button>
             </div>
+          </div>
           )}
         </div>
 
@@ -183,7 +216,7 @@ useEffect(() => {
             <div
             ref={circleRef2}
             className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
-            onClick={() => setShowVideo2(true)}
+            onClick={() => openVideo(2)}
           >
             {playInCircle2 ? (
               <video
@@ -196,7 +229,7 @@ useEffect(() => {
               />
             ) : (
               <img
-                src="/images/about.jpg"
+                src="/videos/LandingPage/2.png"
                 alt="Second Video"
                 className="w-full h-full object-cover"
               />
@@ -240,14 +273,22 @@ useEffect(() => {
        {/* Divider Line */}
        <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
-        {/* THIRD SECTION */}
-      <section className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${showVideo3 ? "h-[596px] py-0" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-        <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+       {/* THIRD SECTION */}
+      <section
+        className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out overflow-hidden relative ${
+          showVideo3 ? "h-[596px] py-0" : "py-20"
+        }`}
+      >
+        <div
+          className={`relative ${
+            showVideo3 ? "w-full h-full flex justify-center items-center" : "flex-shrink-0 mb-10 lg:mb-0"
+          }`}
+        >
           {!showVideo3 ? (
             <div
               ref={circleRef3}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
-              onClick={() => setShowVideo3(true)}
+              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+              onClick={() => openVideo(3)}
             >
               {playInCircle3 ? (
                 <video
@@ -260,36 +301,28 @@ useEffect(() => {
                 />
               ) : (
                 <img
-                  src="/images/about.jpg"
+                  src="/videos/LandingPage/3.png"
                   alt="Third Video"
                   className="object-cover w-full h-full rounded-full"
                 />
               )}
             </div>
           ) : (
-            <div
-              className="relative w-[90vw] max-w-full h-[500px] rounded-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+              <video
+                src="/videos/LandingPage/lifeline 0 chaos.mp4"
+                autoPlay
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-contain rounded-xl"
+              />
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowVideo3(false);
-                }}
-                className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+                onClick={() => setShowVideo3(false)}
+                className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
               >
                 <FaTimes className="w-4 h-4" />
               </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src="/videos/LandingPage/lifeline 0 chaos.mp4"
-                title="STOQ Timeline Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
             </div>
           )}
         </div>
@@ -311,83 +344,92 @@ useEffect(() => {
        <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
      {/* FOURTH SECTION */}
-<section
-  className={`flex ${
-    showVideo4 ? "flex-col" : "flex-col lg:flex-row-reverse"
-  } items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out bg-white overflow-hidden relative ${
-    showVideo4 ? "h-[592px] py-0" : "py-20"
-  }`}
->
-  <div className={`relative ${showVideo4 ? "w-full h-full" : "flex-shrink-0 mb-10 lg:mb-0"}`}>
-    {!showVideo4 ? (
-      <div
-        ref={circleRef4}
-        className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
-        onClick={() => setShowVideo4(true)}
-      >
-        {playInCircle4 ? (
-          <video
-            src="/videos/LandingPage/clusters 2.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
+    <section
+      className={`flex ${
+        showVideo4 ? "flex-col" : "flex-col lg:flex-row-reverse"
+      } items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out bg-white overflow-hidden relative ${
+        showVideo4 ? "h-[592px] py-0" : "py-20"
+      }`}
+    >
+      <div className={`relative ${showVideo4 ? "w-full h-full" : "flex-shrink-0 mb-10 lg:mb-0"}`}>
+        {!showVideo4 ? (
+          <div
+            ref={circleRef4}
+            className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+            onClick={() => openVideo(4)}
+          >
+            {playInCircle4 ? (
+              <video
+                src="/videos/LandingPage/Clusters final.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img
+                src="/videos/LandingPage/4.png"
+                alt="Fourth Video"
+                className="w-full h-full object-cover"
+              />
+            )}
+          </div>
         ) : (
-          <img
-            src="/images/about.jpg"
-            alt="Fourth Video"
-            className="w-full h-full object-cover"
-          />
+          <div className="relative w-full h-full flex justify-center items-center">
+            <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+              <video
+                src="/videos/LandingPage/Clusters final.mp4"
+                autoPlay
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-contain rounded-xl"
+              />
+              <button
+                onClick={() => setShowVideo4(false)}
+                className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+              >
+                <FaTimes className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         )}
       </div>
-    ) : (
-      <div className="relative w-full h-full flex justify-center items-center">
-        <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
-          <video
-            src="/videos/LandingPage/clusters 2.mp4"
-            autoPlay
-            loop
-            playsInline
-            controls
-            className="w-full h-full object-contain rounded-xl"
-          />
-          <button
-            onClick={() => setShowVideo4(false)}
-            className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
-          >
-            <FaTimes className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-    )}
-  </div>
 
-  {!showVideo4 && (
-    <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
-      <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
-        STOQ Clusters multi-domain universe
-      </h2>
-      <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
-        One system, multiple worlds—work, home, hobbies, family—all in one place.
-      </p>
-    </div>
-  )}
-</section>
+      {!showVideo4 && (
+        <div className="lg:mr-16 text-center lg:text-left w-full lg:w-[800px]">
+          <h2 className="text-[#8CB031] text-3xl lg:text-5xl font-bold leading-snug mb-6">
+            STOQ Clusters multi-domain universe
+          </h2>
+          <p className="text-[#6E8A28] text-base lg:text-lg leading-relaxed">
+            One system, multiple worlds—work, home, hobbies, family—all in one place.
+          </p>
+        </div>
+      )}
+    </section>
 
 
       {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
         {/* FIFTH SECTION */}
-      <section className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 ${showVideo5 ? "h-[596px] py-0" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-        <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+
+      <section
+        className={`flex flex-col lg:flex-row items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out overflow-hidden relative ${
+          showVideo5 ? "h-[596px] py-0" : "py-20"
+        }`}
+      >
+        <div
+          className={`relative ${
+            showVideo5 ? "w-full h-full flex justify-center items-center" : "flex-shrink-0 mb-10 lg:mb-0"
+          }`}
+        >
           {!showVideo5 ? (
             <div
               ref={circleRef5}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
-              onClick={() => setShowVideo5(true)}
+              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+              onClick={() => openVideo(5)}
             >
               {playInCircle5 ? (
                 <video
@@ -400,36 +442,28 @@ useEffect(() => {
                 />
               ) : (
                 <img
-                  src="/images/about.jpg"
+                  src="/videos/LandingPage/5.png"
                   alt="Fifth Video"
                   className="object-cover w-full h-full rounded-full"
                 />
               )}
             </div>
           ) : (
-            <div
-              className="relative w-[90vw] max-w-full h-[500px] rounded-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+              <video
+                src="/videos/LandingPage/Works the way your work.mp4"
+                autoPlay
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-contain rounded-xl"
+              />
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowVideo5(false);
-                }}
-                className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+                onClick={() => setShowVideo5(false)}
+                className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
               >
                 <FaTimes className="w-4 h-4" />
               </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src="/videos/LandingPage/Works the way your work.mp4"
-                title="STOQ Work Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
             </div>
           )}
         </div>
@@ -446,17 +480,27 @@ useEffect(() => {
         )}
       </section>
 
+
+
       {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
 
         {/* SIXTH SECTION */}
-      <section className={`flex flex-col lg:flex-row-reverse items-center justify-center px-4 lg:px-10 ${showVideo6 ? "h-[596px] py-0" : "py-20"} transition-all duration-500 ease-in-out overflow-hidden relative`}>
-        <div className="flex-shrink-0 mb-10 lg:mb-0 relative">
+      <section
+        className={`flex flex-col lg:flex-row-reverse items-center justify-center px-4 lg:px-10 transition-all duration-500 ease-in-out overflow-hidden relative ${
+          showVideo6 ? "h-[596px] py-0" : "py-20"
+        }`}
+      >
+        <div
+          className={`relative ${
+            showVideo6 ? "w-full h-full flex justify-center items-center" : "flex-shrink-0 mb-10 lg:mb-0"
+          }`}
+        >
           {!showVideo6 ? (
             <div
               ref={circleRef6}
-              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer"
-              onClick={() => setShowVideo6(true)}
+              className="w-80 h-80 lg:w-[410px] lg:h-[410px] overflow-hidden rounded-full cursor-pointer shadow-md transition-transform"
+              onClick={() => openVideo(6)}
             >
               {playInCircle6 ? (
                 <video
@@ -469,36 +513,28 @@ useEffect(() => {
                 />
               ) : (
                 <img
-                  src="/images/about.jpg"
+                  src="/videos/LandingPage/6.png"
                   alt="Sixth Video"
                   className="object-cover w-full h-full rounded-full"
                 />
               )}
             </div>
           ) : (
-            <div
-              className="relative w-[90vw] max-w-full h-[500px] rounded-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="relative w-[90%] h-[500px] max-w-[1600px] rounded-xl overflow-hidden">
+              <video
+                src="/videos/LandingPage/Life synd & lasting histpry top.mp4"
+                autoPlay
+                loop
+                playsInline
+                controls
+                className="w-full h-full object-contain rounded-xl"
+              />
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowVideo6(false);
-                }}
-                className="absolute top-4 right-4 z-10 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
+                onClick={() => setShowVideo6(false)}
+                className="absolute top-4 right-4 z-20 bg-white text-gray-600 hover:text-black rounded-full p-2 shadow-md"
               >
                 <FaTimes className="w-4 h-4" />
               </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src="/videos/LandingPage/Life synd & lasting histpry top.mp4"
-                title="STOQ Sync Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-xl"
-              ></iframe>
             </div>
           )}
         </div>
@@ -517,12 +553,13 @@ useEffect(() => {
 
 
 
+
      {/* lets get started button at center */}
-        <div className="flex justify-center py-20">
+        {/* <div className="flex justify-center py-20">
             <a href="/get-started" className="bg-[#A9CF45] text-black px-6 py-3 rounded-full text-md font-semibold hover:bg-[#8BB833] transition-colors">
             Let's get started
             </a>
-        </div>
+        </div> */}
 
          {/* Divider Line */}
       <hr className="border-t-2 border-gray-100 mx-20 mb-2" />
