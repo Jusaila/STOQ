@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-white text-m text-[#6E8A28] px-6 pt-16 font-rubik">
@@ -72,13 +72,15 @@ const Footer = () => {
           <h3 className="text-[#181D27] font-bold">Get the app</h3>
 
           {/* App Store */}
-          <a href="#" className="inline-block">
-         <img
-            src="/images/footer-app store badge.svg"
-            alt="Get it on Google Play"
-            className="w-[180px] h-auto"
-          />
-        </a> 
+          <Link to="/" className="cursor-pointer">
+            <img
+              src="/images/footer-app store badge.svg"
+              alt="Get it on App Store"
+              className="w-[180px] h-auto"
+            />
+          </Link>
+
+        
          
          {/* Google Play */}
          <a href="#" className="inline-block">
