@@ -13,7 +13,7 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-[#181D27] mb-3 text-sm">Use Cases</h4>
           <ul className="space-y-3 font-semibold text-[#596F22]">
-          <li><a href="#construction" className="hover:text-[#44551B]">Construction</a></li>
+          <li><a href="construction" className="hover:text-[#44551B]">Construction</a></li>
           <li><a href="#Workshops" className="hover:text-[#44551B]">Workshops</a></li>
           <li><a href="#Farmers" className="hover:text-[#44551B]">Farmers</a></li>
           <li><a href="#Restaurant" className="hover:text-[#44551B]">Food & Cook</a></li>
@@ -38,8 +38,8 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-[#181D27] mb-3 text-sm">Company</h4>
           <ul className="space-y-3 font-semibold text-[#596F22]">
-            <li><a href="#" className="hover:text-[#44551B]">About us</a></li>
-            <li><a href="#" className="hover:text-[#44551B]">Pricing</a></li>
+            <li><a href="about" className="hover:text-[#44551B]">About us</a></li>
+            <li><a href="pricing" className="hover:text-[#44551B]">Pricing</a></li>
             <li><a href="#" className="hover:text-[#44551B]">Contact</a></li>
           </ul>
         </div>
@@ -72,15 +72,14 @@ const Footer = () => {
           <h3 className="text-[#181D27] font-bold">Get the app</h3>
 
           {/* App Store */}
-          <Link to="/" className="cursor-pointer">
+          <a href="#" className="cursor-pointer">
             <img
               src="/images/footer-app store badge.svg"
               alt="Get it on App Store"
               className="w-[180px] h-auto"
             />
-          </Link>
-
-        
+          </a>
+              
          
          {/* Google Play */}
          <a href="#" className="inline-block">
@@ -99,7 +98,10 @@ const Footer = () => {
 
       {/* Bottom Row */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-0 pb-10 text-sm">
+        
+        <Link to="/">
         <img src="/images/logo-small.svg" alt="STOQ Logo" className="h-10 mb-4 md:mb-0" />
+        </Link>
         <p className="text-[#6B7280]">&copy; 2025 STOQ. All rights reserved.</p>
       </div>
     </footer>
